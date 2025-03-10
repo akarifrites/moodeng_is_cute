@@ -11351,3 +11351,99 @@
 2025-03-10 22:35:06,597 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
 2025-03-10 22:35:07,080 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
 2025-03-10 22:35:08,090 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:09,094 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:10,099 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:10,630 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:11,102 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:11,463 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: status_report
+2025-03-10 22:35:12,105 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:12,115 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-10 22:35:12,115 DEBUG   SenderThread:17076 [sender.py:send_request():418] send_request: stop_status
+2025-03-10 22:35:12,651 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:13,115 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:14,120 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:14,672 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:15,128 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:16,133 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:16,465 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: status_report
+2025-03-10 22:35:16,700 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:17,138 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:18,149 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:18,713 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:19,160 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:20,167 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:21,169 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:21,470 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: status_report
+2025-03-10 22:35:22,187 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:22,749 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:23,195 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:24,200 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:24,777 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:25,207 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:26,208 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:26,476 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: status_report
+2025-03-10 22:35:27,119 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-10 22:35:27,119 DEBUG   SenderThread:17076 [sender.py:send_request():418] send_request: stop_status
+2025-03-10 22:35:27,215 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:28,218 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:28,804 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:29,220 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:30,230 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:30,819 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:31,231 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:31,479 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: status_report
+2025-03-10 22:35:32,240 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:33,229 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:34,230 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:34,603 DEBUG   SenderThread:17076 [sender.py:send():391] send: stats
+2025-03-10 22:35:34,871 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:35,242 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:35,881 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:36,249 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:36,500 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: status_report
+2025-03-10 22:35:37,260 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:37,899 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:38,267 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:39,272 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:39,914 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:40,277 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:41,281 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:41,502 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: status_report
+2025-03-10 22:35:41,929 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:42,142 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-10 22:35:42,142 DEBUG   SenderThread:17076 [sender.py:send_request():418] send_request: stop_status
+2025-03-10 22:35:42,284 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:43,290 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:44,297 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:45,308 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:45,968 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:46,313 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:46,509 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: status_report
+2025-03-10 22:35:47,320 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:47,999 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:48,323 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:49,332 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:50,014 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:50,334 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:51,344 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:51,510 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: status_report
+2025-03-10 22:35:52,034 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:52,349 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:53,361 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:54,373 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:55,374 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:56,093 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:56,378 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:56,512 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: status_report
+2025-03-10 22:35:57,148 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-10 22:35:57,148 DEBUG   SenderThread:17076 [sender.py:send_request():418] send_request: stop_status
+2025-03-10 22:35:57,385 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:58,116 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:35:58,390 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:35:59,400 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:36:00,402 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:36:01,408 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:36:01,523 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: status_report
+2025-03-10 22:36:02,129 INFO    Thread-16 :17076 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20250310_204513-lb30lpfy\files\output.log
+2025-03-10 22:36:02,414 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-10 22:36:03,422 DEBUG   HandlerThread:17076 [handler.py:handle_request():158] handle_request: internal_messages
