@@ -1,0 +1,817 @@
+Original model structure:
+Network_1(
+  (quant): QuantStub()
+  (dequant): DeQuantStub()
+  (in_c): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(1, 8, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(8, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Conv2dNormActivation(
+      (0): Conv2d(8, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (stages): Sequential(
+    (s1): Sequential(
+      (b1): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+      (b2): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+      (b3): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential(
+          (0): AvgPool2d(kernel_size=3, stride=(1, 2), padding=1)
+          (1): Sequential()
+        )
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 2), padding=(1, 1), groups=64, bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+    )
+    (s2): Sequential(
+      (b4): Block(
+        (after_block_activation): ReLU()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 1), padding=(1, 1), groups=64, bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+      (b5): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(56, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(120, 120, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=120, bias=False)
+            (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(120, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+    )
+    (s3): Sequential(
+      (b6): Block(
+        (after_block_activation): ReLU()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(56, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(120, 120, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=120, bias=False)
+            (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(120, 104, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(104, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+    )
+  )
+  (feed_forward): Sequential(
+    (0): Conv2d(104, 10, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): AdaptiveAvgPool2d(output_size=(1, 1))
+  )
+)
+Before fusing, in_c module:
+Sequential(
+  (0): Conv2dNormActivation(
+    (0): Conv2d(1, 8, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(8, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (1): Conv2dNormActivation(
+    (0): Conv2d(8, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+)
+Fusing in_c module index 0 with keys: ['0', '1', '2']
+Fusing in_c module index 1 with keys: ['0', '1', '2']
+Before fusing, block b1:
+Block(
+  (after_block_activation): ReLU()
+  (shortcut): Sequential()
+  (block): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Conv2dNormActivation(
+      (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): Conv2dNormActivation(
+      (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (ff): FloatFunctional(
+    (activation_post_process): Identity()
+  )
+)
+Fusing block b1 submodule 0 with keys: ['0', '1', '2']
+Fusing block b1 submodule 1 with keys: ['0', '1', '2']
+Fusing block b1 submodule 2 with keys: ['0', '1']
+Before fusing, block b2:
+Block(
+  (after_block_activation): ReLU()
+  (shortcut): Sequential()
+  (block): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Conv2dNormActivation(
+      (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): Conv2dNormActivation(
+      (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (ff): FloatFunctional(
+    (activation_post_process): Identity()
+  )
+)
+Fusing block b2 submodule 0 with keys: ['0', '1', '2']
+Fusing block b2 submodule 1 with keys: ['0', '1', '2']
+Fusing block b2 submodule 2 with keys: ['0', '1']
+Before fusing, block b3:
+Block(
+  (after_block_activation): ReLU()
+  (shortcut): Sequential(
+    (0): AvgPool2d(kernel_size=3, stride=(1, 2), padding=1)
+    (1): Sequential()
+  )
+  (block): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Conv2dNormActivation(
+      (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 2), padding=(1, 1), groups=64, bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): Conv2dNormActivation(
+      (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (ff): FloatFunctional(
+    (activation_post_process): Identity()
+  )
+)
+Fusing block b3 submodule 0 with keys: ['0', '1', '2']
+Fusing block b3 submodule 1 with keys: ['0', '1', '2']
+Fusing block b3 submodule 2 with keys: ['0', '1']
+Before fusing, block b4:
+Block(
+  (after_block_activation): ReLU()
+  (block): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Conv2dNormActivation(
+      (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 1), padding=(1, 1), groups=64, bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): Conv2dNormActivation(
+      (0): Conv2d(64, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (ff): FloatFunctional(
+    (activation_post_process): Identity()
+  )
+)
+Fusing block b4 submodule 0 with keys: ['0', '1', '2']
+Fusing block b4 submodule 1 with keys: ['0', '1', '2']
+Fusing block b4 submodule 2 with keys: ['0', '1']
+Before fusing, block b5:
+Block(
+  (after_block_activation): ReLU()
+  (shortcut): Sequential()
+  (block): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(56, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Conv2dNormActivation(
+      (0): Conv2d(120, 120, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=120, bias=False)
+      (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): Conv2dNormActivation(
+      (0): Conv2d(120, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (ff): FloatFunctional(
+    (activation_post_process): Identity()
+  )
+)
+Fusing block b5 submodule 0 with keys: ['0', '1', '2']
+Fusing block b5 submodule 1 with keys: ['0', '1', '2']
+Fusing block b5 submodule 2 with keys: ['0', '1']
+Before fusing, block b6:
+Block(
+  (after_block_activation): ReLU()
+  (block): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(56, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Conv2dNormActivation(
+      (0): Conv2d(120, 120, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=120, bias=False)
+      (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): Conv2dNormActivation(
+      (0): Conv2d(120, 104, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(104, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (ff): FloatFunctional(
+    (activation_post_process): Identity()
+  )
+)
+Fusing block b6 submodule 0 with keys: ['0', '1', '2']
+Fusing block b6 submodule 1 with keys: ['0', '1', '2']
+Fusing block b6 submodule 2 with keys: ['0', '1']
+After fusing, model structure:
+Network_1(
+  (quant): QuantStub()
+  (dequant): DeQuantStub()
+  (in_c): Sequential(
+    (0): Conv2dNormActivation(
+      (0): ConvReLU2d(
+        (0): Conv2d(1, 8, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+        (1): ReLU()
+      )
+      (1): Identity()
+      (2): Identity()
+    )
+    (1): Conv2dNormActivation(
+      (0): ConvReLU2d(
+        (0): Conv2d(8, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+        (1): ReLU()
+      )
+      (1): Identity()
+      (2): Identity()
+    )
+  )
+  (stages): Sequential(
+    (s1): Sequential(
+      (b1): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1))
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64)
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1))
+            (1): Identity()
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+      (b2): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1))
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64)
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1))
+            (1): Identity()
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+      (b3): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential(
+          (0): AvgPool2d(kernel_size=3, stride=(1, 2), padding=1)
+          (1): Sequential()
+        )
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1))
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 2), padding=(1, 1), groups=64)
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1))
+            (1): Identity()
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+    )
+    (s2): Sequential(
+      (b4): Block(
+        (after_block_activation): ReLU()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1))
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 1), padding=(1, 1), groups=64)
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 56, kernel_size=(1, 1), stride=(1, 1))
+            (1): Identity()
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+      (b5): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(56, 120, kernel_size=(1, 1), stride=(1, 1))
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(120, 120, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=120)
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(120, 56, kernel_size=(1, 1), stride=(1, 1))
+            (1): Identity()
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+    )
+    (s3): Sequential(
+      (b6): Block(
+        (after_block_activation): ReLU()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(56, 120, kernel_size=(1, 1), stride=(1, 1))
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(120, 120, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=120)
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(120, 104, kernel_size=(1, 1), stride=(1, 1))
+            (1): Identity()
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+    )
+  )
+  (feed_forward): Sequential(
+    (0): Conv2d(104, 10, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): AdaptiveAvgPool2d(output_size=(1, 1))
+  )
+)
+Quantized model:8
+Network_1(
+  (quant): Quantize(scale=tensor([0.1727]), zero_point=tensor([66]), dtype=torch.quint8)
+  (dequant): DeQuantize()
+  (in_c): Sequential(
+    (0): Conv2dNormActivation(
+      (0): QuantizedConvReLU2d(1, 8, kernel_size=(3, 3), stride=(2, 2), scale=0.06472538411617279, zero_point=0, padding=(1, 1))
+      (1): Identity()
+      (2): Identity()
+    )
+    (1): Conv2dNormActivation(
+      (0): QuantizedConvReLU2d(8, 32, kernel_size=(3, 3), stride=(2, 2), scale=0.05499342083930969, zero_point=0, padding=(1, 1))
+      (1): Identity()
+      (2): Identity()
+    )
+  )
+  (stages): Sequential(
+    (s1): Sequential(
+      (b1): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): QuantizedConvReLU2d(32, 64, kernel_size=(1, 1), stride=(1, 1), scale=0.07621732354164124, zero_point=0)
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): QuantizedConvReLU2d(64, 64, kernel_size=(3, 3), stride=(1, 1), scale=0.09302583336830139, zero_point=0, padding=(1, 1), groups=64)
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): QuantizedConv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), scale=0.12977513670921326, zero_point=62)
+            (1): Identity()
+          )
+        )
+        (ff): QFunctional(
+          scale=1.0, zero_point=0
+          (activation_post_process): Identity()
+        )
+      )
+      (b2): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): QuantizedConvReLU2d(32, 64, kernel_size=(1, 1), stride=(1, 1), scale=0.08084958791732788, zero_point=0)
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): QuantizedConvReLU2d(64, 64, kernel_size=(3, 3), stride=(1, 1), scale=0.1008063554763794, zero_point=0, padding=(1, 1), groups=64)
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): QuantizedConv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), scale=0.18905575573444366, zero_point=65)
+            (1): Identity()
+          )
+        )
+        (ff): QFunctional(
+          scale=1.0, zero_point=0
+          (activation_post_process): Identity()
+        )
+      )
+      (b3): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential(
+          (0): AvgPool2d(kernel_size=3, stride=(1, 2), padding=1)
+          (1): Sequential()
+        )
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): QuantizedConvReLU2d(32, 64, kernel_size=(1, 1), stride=(1, 1), scale=0.07365211099386215, zero_point=0)
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): QuantizedConvReLU2d(64, 64, kernel_size=(3, 3), stride=(1, 2), scale=0.08811856061220169, zero_point=0, padding=(1, 1), groups=64)
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): QuantizedConv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), scale=0.11658165603876114, zero_point=60)
+            (1): Identity()
+          )
+        )
+        (ff): QFunctional(
+          scale=1.0, zero_point=0
+          (activation_post_process): Identity()
+        )
+      )
+    )
+    (s2): Sequential(
+      (b4): Block(
+        (after_block_activation): ReLU()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): QuantizedConvReLU2d(32, 64, kernel_size=(1, 1), stride=(1, 1), scale=0.08152557909488678, zero_point=0)
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): QuantizedConvReLU2d(64, 64, kernel_size=(3, 3), stride=(2, 1), scale=0.0949343666434288, zero_point=0, padding=(1, 1), groups=64)
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): QuantizedConv2d(64, 56, kernel_size=(1, 1), stride=(1, 1), scale=0.12322746962308884, zero_point=71)
+            (1): Identity()
+          )
+        )
+        (ff): QFunctional(
+          scale=1.0, zero_point=0
+          (activation_post_process): Identity()
+        )
+      )
+      (b5): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): QuantizedConvReLU2d(56, 120, kernel_size=(1, 1), stride=(1, 1), scale=0.08014050871133804, zero_point=0)
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): QuantizedConvReLU2d(120, 120, kernel_size=(3, 3), stride=(1, 1), scale=0.08655600249767303, zero_point=0, padding=(1, 1), groups=120)
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): QuantizedConv2d(120, 56, kernel_size=(1, 1), stride=(1, 1), scale=0.14067663252353668, zero_point=68)
+            (1): Identity()
+          )
+        )
+        (ff): QFunctional(
+          scale=1.0, zero_point=0
+          (activation_post_process): Identity()
+        )
+      )
+    )
+    (s3): Sequential(
+      (b6): Block(
+        (after_block_activation): ReLU()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): QuantizedConvReLU2d(56, 120, kernel_size=(1, 1), stride=(1, 1), scale=0.06714673340320587, zero_point=0)
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): QuantizedConvReLU2d(120, 120, kernel_size=(3, 3), stride=(1, 1), scale=0.12442156672477722, zero_point=0, padding=(1, 1), groups=120)
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): QuantizedConv2d(120, 104, kernel_size=(1, 1), stride=(1, 1), scale=0.1444389969110489, zero_point=82)
+            (1): Identity()
+          )
+        )
+        (ff): QFunctional(
+          scale=1.0, zero_point=0
+          (activation_post_process): Identity()
+        )
+      )
+    )
+  )
+  (feed_forward): Sequential(
+    (0): QuantizedConv2d(104, 10, kernel_size=(1, 1), stride=(1, 1), scale=0.34982696175575256, zero_point=42, bias=False)
+    (1): QuantizedBatchNorm2d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): AdaptiveAvgPool2d(output_size=(1, 1))
+  )
+)
+Traceback (most recent call last):
+  File "c:\Users\fenel\Documents\dcase2024_task1_baseline\quantize.py", line 530, in <module>
+    main()
+  File "c:\Users\fenel\Documents\dcase2024_task1_baseline\quantize.py", line 434, in main
+    quantized_accuracy = evaluate(model_int8, test_loader, MelSpecGenerator)
+  File "c:\Users\fenel\Documents\dcase2024_task1_baseline\quantize.py", line 327, in evaluate
+    outputs = model(mel_spec)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "c:\Users\fenel\Documents\dcase2024_task1_baseline\quantize.py", line 211, in forward
+    x = self._forward_conv(x)
+  File "c:\Users\fenel\Documents\dcase2024_task1_baseline\quantize.py", line 202, in _forward_conv
+    x = self.stages(x)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\container.py", line 219, in forward
+    input = module(input)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\container.py", line 219, in forward
+    input = module(input)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "c:\Users\fenel\Documents\dcase2024_task1_baseline\models\baseline.py", line 88, in forward
+    x = self.block(x) + self.shortcut(x)
+NotImplementedError: Could not run 'aten::add.out' with arguments from the 'QuantizedCPU' backend. This could be because the operator doesn't exist for this backend, or was omitted during the selective/custom build process (if using custom build). If you are a Facebook employee using PyTorch on mobile, please visit https://fburl.com/ptmfixes for possible resolutions. 'aten::add.out' is only available for these backends: [CPU, CUDA, Meta, MkldnnCPU, SparseCPU, SparseCUDA, SparseMeta, SparseCsrCPU, SparseCsrCUDA, SparseCsrMeta, BackendSelect, Python, FuncTorchDynamicLayerBackMode, Functionalize, Named, Conjugate, Negative, ZeroTensor, ADInplaceOrView, AutogradOther, AutogradCPU, AutogradCUDA, AutogradHIP, AutogradXLA, AutogradMPS, AutogradIPU, AutogradXPU, AutogradHPU, AutogradVE, AutogradLazy, AutogradMTIA, AutogradPrivateUse1, AutogradPrivateUse2, AutogradPrivateUse3, AutogradMeta, AutogradNestedTensor, Tracer, AutocastCPU, AutocastXPU, AutocastCUDA, FuncTorchBatched, BatchedNestedTensor, FuncTorchVmapMode, Batched, VmapMode, FuncTorchGradWrapper, PythonTLSSnapshot, FuncTorchDynamicLayerFrontMode, PreDispatch, PythonDispatcher].
+CPU: registered at C:\cb\pytorch_1000000000000\work\build\aten\src\ATen\RegisterCPU.cpp:30455 [kernel]
+CUDA: registered at C:\cb\pytorch_1000000000000\work\build\aten\src\ATen\RegisterCUDA.cpp:44681 [kernel]
+Meta: registered at /dev/null:241 [kernel]
+MkldnnCPU: registered at C:\cb\pytorch_1000000000000\work\build\aten\src\ATen\RegisterMkldnnCPU.cpp:531 [kernel]
+SparseCPU: registered at C:\cb\pytorch_1000000000000\work\build\aten\src\ATen\RegisterSparseCPU.cpp:1387 [kernel]
+SparseCUDA: registered at C:\cb\pytorch_1000000000000\work\build\aten\src\ATen\RegisterSparseCUDA.cpp:1573 [kernel]
+SparseMeta: registered at C:\cb\pytorch_1000000000000\work\build\aten\src\ATen\RegisterSparseMeta.cpp:287 [kernel]
+SparseCsrCPU: registered at C:\cb\pytorch_1000000000000\work\build\aten\src\ATen\RegisterSparseCsrCPU.cpp:1135 [kernel]
+SparseCsrCUDA: registered at C:\cb\pytorch_1000000000000\work\build\aten\src\ATen\RegisterSparseCsrCUDA.cpp:1276 [kernel]
+SparseCsrMeta: registered at C:\cb\pytorch_1000000000000\work\build\aten\src\ATen\RegisterSparseCsrMeta.cpp:215 [kernel]
+BackendSelect: fallthrough registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\core\BackendSelectFallbackKernel.cpp:3 [backend fallback]
+Python: registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\core\PythonFallbackKernel.cpp:153 [backend fallback]
+FuncTorchDynamicLayerBackMode: registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\functorch\DynamicLayer.cpp:497 [backend fallback]
+Functionalize: registered at C:\cb\pytorch_1000000000000\work\build\aten\src\ATen\RegisterFunctionalization_0.cpp:22340 [kernel]
+Named: fallthrough registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\core\NamedRegistrations.cpp:11 [kernel]
+Conjugate: registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\ConjugateFallback.cpp:17 [backend fallback]
+Negative: registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\native\NegateFallback.cpp:18 [backend fallback]
+ZeroTensor: registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\ZeroTensorFallback.cpp:86 [backend fallback]
+ADInplaceOrView: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\ADInplaceOrViewType_0.cpp:4942 [kernel]
+AutogradOther: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradCPU: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradCUDA: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradHIP: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradXLA: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradMPS: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradIPU: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradXPU: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradHPU: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradVE: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradLazy: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradMTIA: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradPrivateUse1: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradPrivateUse2: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradPrivateUse3: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradMeta: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+AutogradNestedTensor: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\VariableType_4.cpp:18531 [autograd kernel]
+Tracer: registered at C:\cb\pytorch_1000000000000\work\torch\csrc\autograd\generated\TraceType_2.cpp:17623 [kernel]
+AutocastCPU: fallthrough registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\autocast_mode.cpp:209 [backend fallback]
+AutocastXPU: fallthrough registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\autocast_mode.cpp:351 [backend fallback]
+AutocastCUDA: fallthrough registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\autocast_mode.cpp:165 [backend fallback]
+FuncTorchBatched: registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\functorch\LegacyBatchingRegistrations.cpp:731 [backend fallback]
+BatchedNestedTensor: registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\functorch\LegacyBatchingRegistrations.cpp:758 [backend fallback]
+FuncTorchVmapMode: fallthrough registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\functorch\VmapModeRegistrations.cpp:27 [backend fallback]
+Batched: registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\LegacyBatchingRegistrations.cpp:1075 [backend fallback]
+VmapMode: fallthrough registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\VmapModeRegistrations.cpp:33 [backend fallback]
+FuncTorchGradWrapper: registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\functorch\TensorWrapper.cpp:207 [backend fallback]
+PythonTLSSnapshot: registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\core\PythonFallbackKernel.cpp:161 [backend fallback]
+FuncTorchDynamicLayerFrontMode: registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\functorch\DynamicLayer.cpp:493 [backend fallback]
+PreDispatch: registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\core\PythonFallbackKernel.cpp:165 [backend fallback]
+PythonDispatcher: registered at C:\cb\pytorch_1000000000000\work\aten\src\ATen\core\PythonFallbackKernel.cpp:157 [backend fallback]

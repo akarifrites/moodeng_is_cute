@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
 
-class AcousticSceneClassifier(nn.Module):
+class testmodel_1(nn.Module):
     def __init__(self, num_classes=10, device_embedding_dim=4):
-        super(AcousticSceneClassifier, self).__init__()
+        super(testmodel_1, self).__init__()
         
         # Convolutional layers: input shape (batch, 1, 256, 65)
         self.conv_layers = nn.Sequential(

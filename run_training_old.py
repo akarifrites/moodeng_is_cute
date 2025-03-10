@@ -11,7 +11,7 @@ import json
 
 from dataset.dcase24 import get_training_set, get_test_set, get_eval_set
 from helpers.init import worker_init_fn
-from models.baseline_old import get_model
+from models.baseline_og import get_model
 from helpers.utils import mixstyle
 from helpers import nessi
 

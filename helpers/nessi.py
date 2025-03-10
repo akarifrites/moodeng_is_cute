@@ -44,24 +44,3 @@ def get_torch_size(model, input_size):
     # Use the input_data argument to pass both inputs.
     model_profile = torchinfo.summary(model, input_data=(dummy_x, dummy_device_id))
     return model_profile.total_mult_adds, model_profile.total_params
-
-
-# class ModelWrapper(torch.nn.Module):
-#     """
-#     A wrapper for AcousticSceneClassifier to provide a default device_id when calling torchinfo.summary().
-#     """
-#     def __init__(self, model):
-#         super().__init__()
-#         self.model = model
-
-#     def forward(self, x):
-#         dummy_device_id = torch.zeros((x.shape[0],), dtype=torch.long, device=x.device)  # Dummy device ID
-#         return self.model(x, dummy_device_id)
-
-# def get_torch_size(model, input_size):
-#     """
-#     Computes the MACs and parameters for the given model using torchinfo.summary().
-#     """
-#     model_wrapper = ModelWrapper(model)  
-#     model_profile = torchinfo.summary(model_wrapper, input_size=input_size)
-#     return model_profile.total_mult_adds, model_profile.total_params  # Return MACs & Parameters

@@ -17,7 +17,7 @@ from dataset.dcase24 import get_training_set, get_test_set, get_eval_set
 from helpers.init import worker_init_fn
 from helpers.output_dim import get_model_output_dim
 from models.baseline import get_model
-from models.testmodel_1 import AcousticSceneClassifier
+from models.testmodel_1 import testmodel_1
 from helpers.utils import mixstyle
 from helpers import nessi
 
@@ -67,12 +67,8 @@ class PLModule(pl.LightningModule):
                                expansion_rate=config.expansion_rate
                                )
 
-        # self.model = AcousticSceneClassifier(num_classes=config.n_classes, device_embedding_dim=4)
+        self.model = testmodel_1(num_classes=config.n_classes, device_embedding_dim=4)
         
-        # For fusing device features, you need to know the output feature dimension of self.model.
-        # Call the function from output_dim.py
-        mel_feat_dim = get_model_output_dim(self.model)
-
         self.device_ids = ['a', 'b', 'c', 's1', 's2', 's3', 's4', 's5', 's6']
         self.label_ids = ['airport', 'bus', 'metro', 'metro_station', 'park', 'public_square', 'shopping_mall',
                           'street_pedestrian', 'street_traffic', 'tram']
@@ -81,16 +77,6 @@ class PLModule(pl.LightningModule):
                               's1': "seen", 's2': "seen", 's3': "seen",
                               's4': "unseen", 's5': "unseen", 's6': "unseen"}
         
-        # Create a mapping from device id string to index
-        self.device_id_to_idx = {d: i for i, d in enumerate(self.device_ids)}
-
-        # A classifier that takes the concatenated mel features and device embedding
-        self.classifier = nn.Sequential(
-            nn.Linear(mel_feat_dim, 128),
-            nn.ReLU(),
-            nn.Linear(128, config.n_classes)
-        )
-
         # pl 2 containers:
         self.training_step_outputs = []
         self.validation_step_outputs = []
@@ -101,37 +87,23 @@ class PLModule(pl.LightningModule):
         :param x: batch of raw audio signals (waveforms)
         :return: log mel spectrogram
         """
-        # If input is [batch, time, channel], transpose to [batch, channel, time]
-        if x.ndim == 3 and x.shape[-1] == 1:
-            x = x.transpose(1, 2)
-        # If mixstyle unsqueezes to [batch, channel, time, 1], squeeze the last dimension
-        elif x.ndim == 4 and x.shape[-1] == 1:
-            x = x.squeeze(-1)
-        x = x.contiguous()  # Ensure tensor is stored in a contiguous block of memory
+        # # If input is [batch, time, channel], transpose to [batch, channel, time]
+        # if x.ndim == 3 and x.shape[-1] == 1:
+        #     x = x.transpose(1, 2)
+        # # If mixstyle unsqueezes to [batch, channel, time, 1], squeeze the last dimension
+        # elif x.ndim == 4 and x.shape[-1] == 1:
+        #     x = x.squeeze(-1)
+        # x = x.contiguous()  # Ensure tensor is stored in a contiguous block of memory
         x = self.mel(x)
         if self.training:
             x = self.mel_augment(x)
-        # # Debug: check stats before taking log
-        # if torch.isnan(x).any():
-        #     print("NaN detected before log in mel_forward")
-        # x = (x + 1e-5).log()
-        # if torch.isnan(x).any():
-        #     print("NaN detected after log in mel_forward")
-        # return x
         x = (x + 1e-5).log()
         # print(f"Log Mel Spectrogram Shape: {x.shape}")
+        if torch.isnan(x).any():
+            raise ValueError("NaNs detected in log mel spectrogram")
         return x
-    
-    
-    # def device_forward(self, device_id):
-    #     """
-    #     Convert device ID into embeddings.
-    #     """
-    #     # Ensure device_id is a tensor of type torch.long on the same device as the model
-    #     device_id = device_id.to(dtype=torch.long, device=self.device)
-    #     return self.device_embedding(device_id)
 
-    def forward(self, x, device_id):
+    def forward(self, x, device_id, apply_mel=True):
         # # Forward pass through the baseline model
         # """
         # :param x: batch of raw audio signals (waveforms)
@@ -147,19 +119,13 @@ class PLModule(pl.LightningModule):
         :param device_id: batch of device ids
         :return: final model predictions
         """
-        mel_spec = self.mel_forward(x) # Process the audio into log mel spectrograms
-        logits = self.model(mel_spec, device_id)
-        return logits   
-    
-        # # Forward pass through testmodel_1 with device embeddings    
-        # """
-        # :param x: batch of raw audio signals (waveforms)
-        # :param device_id: batch of device ids
-        # :return: final model predictions
-        # """
-        # mel_spec = self.mel_forward(x)
-        # logits = self.model(mel_spec, device_id)  # Pass both inputs
-        # return logits
+        if apply_mel:
+            x = self.mel_forward(x) # Process the audio into log mel spectrograms
+        x = self.model(x, device_id) # Input MelSpec + Device_ID into the model, get output
+        return x   
+        # mel_spec = self.mel_forward(x) # Process the audio into log mel spectrograms
+        # logits = self.model(mel_spec, device_id)
+        # return logits   
     
 
     def configure_optimizers(self):
@@ -192,32 +158,34 @@ class PLModule(pl.LightningModule):
         """
         x, files, labels, devices, cities = train_batch
         # print(f"x shape before mixstyle: {x.shape}")  # Debugging
-        labels = labels.type(torch.LongTensor)
-        labels = labels.to(self.device)
+        labels = labels.type(torch.LongTensor).to(self.device)
         devices = devices.to(torch.long)
         # print("Labels dtype:", labels.dtype)
         # print("Devices dtype:", devices.dtype)
         # x = self.mel_forward(x)  # we convert the raw audio signals into log mel spectrograms
 
+        if devices.ndim > 1:
+            devices = devices.squeeze()
+
         if self.config.mixstyle_p > 0:
-            # frequency mixstyle
-            if x.dim() == 3:  # Convert [batch, 1, time] -> [batch, 1, height, width]
-                x = x.unsqueeze(-1)  # Add a width dimension, making it [256, 1, 44100, 1]
+            x = self.mel_forward(x)
             x = mixstyle(x, self.config.mixstyle_p, self.config.mixstyle_alpha)
-        # y_hat = self.model(x, devices)
-        devices = devices.to(torch.long)  # Ensure dtype is correct
-        y_hat = self.forward(x, devices)  # Passing devices into forward method
-        samples_loss = F.cross_entropy(y_hat, labels, reduction="none")
-        loss = samples_loss.mean()
 
-        # # Debug: Check loss value
-        # if torch.isnan(loss):
-        #     print("Loss is NaN! Check inputs and model outputs.")
-        #     # Optionally, print out stats of mel_spec, y_hat, etc.
-        #     mel_spec = self.mel_forward(x)
-        #     print("mel_spec stats:", mel_spec.min().item(), mel_spec.max().item(), mel_spec.mean().item())
-        #     print("y_hat stats:", y_hat.min().item(), y_hat.max().item(), y_hat.mean().item())
+        y_hat = self.forward(x, devices, apply_mel=False)  # Passing devices into forward method
+        if torch.isnan(y_hat).any():
+            raise ValueError("NaNs detected in model outputs")
+        loss = F.cross_entropy(y_hat, labels, reduction="mean")
 
+        # if self.config.mixstyle_p > 0:
+        #     # frequency mixstyle
+        #     if x.dim() == 3:  # Convert [batch, 1, time] -> [batch, 1, height, width]
+        #         x = x.unsqueeze(-1)  # Add a width dimension, making it [256, 1, 44100, 1]
+        #     x = mixstyle(x, self.config.mixstyle_p, self.config.mixstyle_alpha)
+        # # y_hat = self.model(x, devices)
+        # devices = devices.to(torch.long)  # Ensure dtype is correct
+        # y_hat = self.forward(x, devices)  # Passing devices into forward method
+        # samples_loss = F.cross_entropy(y_hat, labels, reduction="none")
+        # loss = samples_loss.mean()
 
         self.log("lr", self.trainer.optimizers[0].param_groups[0]['lr'])
         self.log("epoch", self.current_epoch)
@@ -650,15 +618,15 @@ if __name__ == '__main__':
     parser.add_argument('--expansion_rate', type=float, default=2.1)
 
     # training
-    parser.add_argument('--n_epochs', type=int, default=20)
+    parser.add_argument('--n_epochs', type=int, default=150)
     parser.add_argument('--batch_size', type=int, default=256)
-    parser.add_argument('--mixstyle_p', type=float, default=0)  # frequency mixstyle
+    parser.add_argument('--mixstyle_p', type=float, default=0.4)  # frequency mixstyle
     parser.add_argument('--mixstyle_alpha', type=float, default=0.3)
     parser.add_argument('--weight_decay', type=float, default=0.0001)
     parser.add_argument('--roll_sec', type=int, default=0.1)  # roll waveform over time
 
     # peak learning rate (in cosinge schedule)
-    parser.add_argument('--lr', type=float, default=0.001)
+    parser.add_argument('--lr', type=float, default=0.005)
     parser.add_argument('--warmup_steps', type=int, default=2000)
 
     # preprocessing
