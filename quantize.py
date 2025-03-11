@@ -337,8 +337,8 @@ def calibrate(model, data_loader, MelSpecGenerator):
             model(mel_spec)
             print(f"Calibrating: {idx+1}/{len(data_loader)}", end='\r')
             # For demonstration, calibrate on one batch only
-            if idx == 0:
-                break
+            # if idx == 0:
+            #     break
 
 def main():
     # Initialize wandb
@@ -360,41 +360,33 @@ def main():
     model_unquantized.load_state_dict(torch.load(r'.\predictions\0vl52i7d\model_state_dict.pt'))
     model_unquantized.eval()
 
-    # Inspect the original model
+    # # Inspect the original model
     print("Original model structure:")
     print(model_fp32)
 
-    # Fuse layers for quantization
-    model_fp32 = fuse_model(model_fp32)
-
-    # Set the quantization configuration (using fbgemm backend)
-    model_fp32.qconfig = quantization.get_default_qconfig('fbgemm')
-
-    # Prepare the model for static quantization
-    model_fp32_prepared = quantization.prepare(model_fp32, inplace=True)
+    model_fp32 = fuse_model(model_fp32) # Fuse layers for quantization
+    model_fp32.qconfig = quantization.get_default_qconfig('fbgemm') # Set the quantization configuration (using fbgemm backend)
+    model_fp32_prepared = quantization.prepare(model_fp32, inplace=True) # Prepare the model for static quantization
 
     train_dataset = get_training_set()  # This accesses the original training dataset
     num_calibration_samples = int(0.05 * len(train_dataset))
     calibration_indices = np.random.choice(len(train_dataset), num_calibration_samples, replace=False)
-
-    # Create a subset of the training data for calibration
-    calibration_data = Subset(train_dataset, calibration_indices)            
+    calibration_data = Subset(train_dataset, calibration_indices) # Create a subset of the training data for calibration           
 
     # Create a DataLoader for calibration (replace with your dataset)
-    calibration_data = DataLoader(dataset=calibration_data,
+    calibration_loader = DataLoader(dataset=calibration_data,
                                     batch_size=256,  # Use the same batch size as train_dl
                                     num_workers=0,
                                     shuffle=False  # No need to shuffle for calibration
                                     )
-    calibrate(model_fp32_prepared, calibration_data, MelSpecGenerator)
+    calibrate(model_fp32_prepared, calibration_loader, MelSpecGenerator)
 
     # Convert the model to a quantized version
     model_int8 = quantization.convert(model_fp32_prepared)
     print("Quantized model:")
     print(model_int8)
 
-    # Create a test dataloader
-    test_loader = DataLoader(get_test_set(), batch_size=256, shuffle=True)
+    test_loader = DataLoader(get_test_set(), batch_size=256, shuffle=True) # Create a test dataloader
 
     # Evaluate both quantized and unquantized models
     quantized_accuracy = evaluate(model_int8, test_loader, MelSpecGenerator)
@@ -406,52 +398,27 @@ def main():
     # Log metrics to wandb
     wandb.log({
         "quantized_accuracy": quantized_accuracy,
-        "unquantized_accuracy": unquantized_accuracy
+        "unquantized_accuracy": unquantized_accuracy,
+        "accuracy_drop": unquantized_accuracy - quantized_accuracy
     })
 
-
-# def test_single_batch(model, dataloader, mel_spec_transform=None):
-#     model.eval()  # Set model to evaluation mode
-#     with torch.no_grad(): 
-#         # Get a single batch of data
-#         for batch in dataloader:
-#             labels = batch[2]
-#             labels = labels.type(torch.LongTensor)
-#             inputs = batch[0]   
-        
-#             # Print shapes to verify correct input/output sizes
-#             print("Input shape:", inputs.shape)
-#             print("Label shape:", labels.shape)
-        
-#             # Convert to Mel spectrogram if needed
-#             if mel_spec_transform:
-#                 inputs = mel_spec_transform(inputs)
-#                 print("Transformed input shape (Mel spectrogram):", inputs.shape)
-        
-#             # Forward pass through the model
-#             outputs = model(inputs)
-#             print("Output shape:", outputs.shape)
-#             print("Outputs:", outputs)
-#             print("Labels:", labels)
-        
-#             # Calculate predictions
-#             _, predicted = torch.max(outputs.data, 1)
-#             print("Predicted labels:", predicted)
-#             print("Actual labels:", labels)
-        
-#             # Calculate accuracy for this single batch
-#             correct = (predicted == labels).sum().item()
-#             accuracy = 100 * correct / labels.size(0)
-#             print(f"Accuracy for this batch: {accuracy:.2f}%")
-        
-#             break  # Only process one batch for testing
-
-# Run this function with your unquantized model and dataloader
-# Replace `unquantized_model` and `test_loader` with your actual model and dataloader
-# test_single_batch(model_unquantized, test_loader, mel_spec_transform=mel_spec_transform)
-
     # Save the quantized model
-    torch.save(model_int8.state_dict(), 'quant_model_state_dict.pt')
+    torch.save(model_int8, 'quantized_model.pt')
+
+    
+    # Compute model size
+    baseline_model_size = os.path.getsize(r".\predictions\0vl52i7d\model_state_dict.pt") / (1024 * 1024)
+    quantized_model_size = os.path.getsize("quantized_model.pt") / (1024 * 1024)
+    wandb.log({
+        "Baseline Model Size (MB)": baseline_model_size,
+        "Quantized Model Size (MB)": quantized_model_size,
+        "Size Reduction (MB)": baseline_model_size - quantized_model_size
+    })
+
+    print(f"Baseline Model Size: {baseline_model_size:.2f} MB")
+    print(f"Quantized Model Size: {quantized_model_size:.2f} MB")
+
+    wandb.finish()
 
     # To run inference with the quantized model
     model_int8.eval()

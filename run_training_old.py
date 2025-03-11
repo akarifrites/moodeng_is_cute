@@ -12,6 +12,7 @@ import json
 from dataset.dcase24 import get_training_set, get_test_set, get_eval_set
 from helpers.init import worker_init_fn
 from models.baseline_og import get_model
+from models.mobilenet import MobileNetV3Audio
 from helpers.utils import mixstyle
 from helpers import nessi
 
@@ -51,13 +52,16 @@ class PLModule(pl.LightningModule):
             timem
         )
 
-        # the baseline model
-        self.model = get_model(n_classes=config.n_classes,
-                               in_channels=config.in_channels,
-                               base_channels=config.base_channels,
-                               channels_multiplier=config.channels_multiplier,
-                               expansion_rate=config.expansion_rate
-                               )
+        # # the baseline model
+        # self.model = get_model(n_classes=config.n_classes,
+        #                        in_channels=config.in_channels,
+        #                        base_channels=config.base_channels,
+        #                        channels_multiplier=config.channels_multiplier,
+        #                        expansion_rate=config.expansion_rate
+        #                        )
+
+        # the mobilenet model
+        self.model = MobileNetV3Audio(n_classes=config.n_classes)
 
         self.device_ids = ['a', 'b', 'c', 's1', 's2', 's3', 's4', 's5', 's6']
         self.label_ids = ['airport', 'bus', 'metro', 'metro_station', 'park', 'public_square', 'shopping_mall',
@@ -491,7 +495,7 @@ if __name__ == '__main__':
     parser.add_argument('--expansion_rate', type=float, default=2.1)
 
     # training
-    parser.add_argument('--n_epochs', type=int, default=3)
+    parser.add_argument('--n_epochs', type=int, default=150)
     parser.add_argument('--batch_size', type=int, default=256)
     parser.add_argument('--mixstyle_p', type=float, default=0.4)  # frequency mixstyle
     parser.add_argument('--mixstyle_alpha', type=float, default=0.3)

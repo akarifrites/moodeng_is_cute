@@ -30,3 +30,4 @@ config: {'project_name': 'DCASE24_Task1', 'experiment_name': 'Baseline', 'num_wo
 2025-03-10 20:45:20,815 INFO    MainThread:22436 [wandb_run.py:_config_callback():1386] config_cb MACs 44805934 None
 2025-03-10 20:45:20,815 INFO    MainThread:22436 [wandb_config.py:__setitem__():151] config set Parameters = 4221486 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x0000018FCDE6A9B0>>
 2025-03-10 20:45:20,815 INFO    MainThread:22436 [wandb_run.py:_config_callback():1386] config_cb Parameters 4221486 None
+2025-03-11 10:17:00,775 WARNING MsgRouterThr:22436 [router.py:message_loop():77] message_loop has been closed

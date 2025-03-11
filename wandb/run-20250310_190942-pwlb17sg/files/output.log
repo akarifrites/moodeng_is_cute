@@ -1,9 +1,0 @@
-Traceback (most recent call last):
-  File "c:\Users\fenel\Documents\dcase2024_task1_baseline\qat_1.py", line 498, in <module>
-    main()
-  File "c:\Users\fenel\Documents\dcase2024_task1_baseline\qat_1.py", line 378, in main
-    model_fp32.load_state_dict(torch.load(r'.\predictions\0vl52i7d\model_state_dict.pt'))
-  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 2215, in load_state_dict
-    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
-RuntimeError: Error(s) in loading state_dict for Network_1:
-	Missing key(s) in state_dict: "mel.0.kernel", "mel.1.spectrogram.window", "mel.1.mel_scale.fb".
