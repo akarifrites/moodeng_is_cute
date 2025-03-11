@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+# FYP 24/25
+>>>>>>> 78168be76fd227619ebc424b1f2875296b402678
 
 # DCASE2024 - Task 1 - Baseline Systems
 
@@ -189,4 +193,7 @@ The script will generate a folder *predictions/<wandb_id>* containing the predic
 the model's performance on the development-test split (*info.json*), and the model's state dict.
 
 
+<<<<<<< HEAD
 #
+=======
+>>>>>>> 78168be76fd227619ebc424b1f2875296b402678
