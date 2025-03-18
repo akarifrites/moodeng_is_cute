@@ -17,3 +17,4 @@ outputs = session.run(None, input_data)
 
 # Print the model output
 print("ONNX Model Output:", outputs)
+

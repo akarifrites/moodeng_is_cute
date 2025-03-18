@@ -1,0 +1,595 @@
+Original model structure:
+Network_1(
+  (quant): QuantStub()
+  (dequant): DeQuantStub()
+  (in_c): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(1, 8, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(8, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Conv2dNormActivation(
+      (0): Conv2d(8, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (stages): Sequential(
+    (s1): Sequential(
+      (b1): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+      (b2): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+      (b3): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential(
+          (0): AvgPool2d(kernel_size=3, stride=(1, 2), padding=1)
+          (1): Sequential()
+        )
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 2), padding=(1, 1), groups=64, bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+    )
+    (s2): Sequential(
+      (b4): Block(
+        (after_block_activation): ReLU()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 1), padding=(1, 1), groups=64, bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+      (b5): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(56, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(120, 120, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=120, bias=False)
+            (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(120, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+    )
+    (s3): Sequential(
+      (b6): Block(
+        (after_block_activation): ReLU()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(56, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(120, 120, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=120, bias=False)
+            (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(120, 104, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(104, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+    )
+  )
+  (feed_forward): Sequential(
+    (0): Conv2d(104, 10, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): AdaptiveAvgPool2d(output_size=(1, 1))
+  )
+)
+Before fusing, in_c module:
+Sequential(
+  (0): Conv2dNormActivation(
+    (0): Conv2d(1, 8, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(8, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+  (1): Conv2dNormActivation(
+    (0): Conv2d(8, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU()
+  )
+)
+Fusing in_c module index 0 with keys: ['0', '1', '2']
+Fusing in_c module index 1 with keys: ['0', '1', '2']
+Before fusing, block b1:
+Block(
+  (after_block_activation): ReLU()
+  (shortcut): Sequential()
+  (block): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Conv2dNormActivation(
+      (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): Conv2dNormActivation(
+      (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (ff): FloatFunctional(
+    (activation_post_process): Identity()
+  )
+)
+Fusing block b1 submodule 0 with keys: ['0', '1', '2']
+Fusing block b1 submodule 1 with keys: ['0', '1', '2']
+Fusing block b1 submodule 2 with keys: ['0', '1']
+Before fusing, block b2:
+Block(
+  (after_block_activation): ReLU()
+  (shortcut): Sequential()
+  (block): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Conv2dNormActivation(
+      (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): Conv2dNormActivation(
+      (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (ff): FloatFunctional(
+    (activation_post_process): Identity()
+  )
+)
+Fusing block b2 submodule 0 with keys: ['0', '1', '2']
+Fusing block b2 submodule 1 with keys: ['0', '1', '2']
+Fusing block b2 submodule 2 with keys: ['0', '1']
+Before fusing, block b3:
+Block(
+  (after_block_activation): ReLU()
+  (shortcut): Sequential(
+    (0): AvgPool2d(kernel_size=3, stride=(1, 2), padding=1)
+    (1): Sequential()
+  )
+  (block): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Conv2dNormActivation(
+      (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 2), padding=(1, 1), groups=64, bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): Conv2dNormActivation(
+      (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (ff): FloatFunctional(
+    (activation_post_process): Identity()
+  )
+)
+Fusing block b3 submodule 0 with keys: ['0', '1', '2']
+Fusing block b3 submodule 1 with keys: ['0', '1', '2']
+Fusing block b3 submodule 2 with keys: ['0', '1']
+Before fusing, block b4:
+Block(
+  (after_block_activation): ReLU()
+  (block): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Conv2dNormActivation(
+      (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 1), padding=(1, 1), groups=64, bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): Conv2dNormActivation(
+      (0): Conv2d(64, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (ff): FloatFunctional(
+    (activation_post_process): Identity()
+  )
+)
+Fusing block b4 submodule 0 with keys: ['0', '1', '2']
+Fusing block b4 submodule 1 with keys: ['0', '1', '2']
+Fusing block b4 submodule 2 with keys: ['0', '1']
+Before fusing, block b5:
+Block(
+  (after_block_activation): ReLU()
+  (shortcut): Sequential()
+  (block): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(56, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Conv2dNormActivation(
+      (0): Conv2d(120, 120, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=120, bias=False)
+      (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): Conv2dNormActivation(
+      (0): Conv2d(120, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (ff): FloatFunctional(
+    (activation_post_process): Identity()
+  )
+)
+Fusing block b5 submodule 0 with keys: ['0', '1', '2']
+Fusing block b5 submodule 1 with keys: ['0', '1', '2']
+Fusing block b5 submodule 2 with keys: ['0', '1']
+Before fusing, block b6:
+Block(
+  (after_block_activation): ReLU()
+  (block): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(56, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (1): Conv2dNormActivation(
+      (0): Conv2d(120, 120, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=120, bias=False)
+      (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (2): Conv2dNormActivation(
+      (0): Conv2d(120, 104, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(104, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (ff): FloatFunctional(
+    (activation_post_process): Identity()
+  )
+)
+Fusing block b6 submodule 0 with keys: ['0', '1', '2']
+Fusing block b6 submodule 1 with keys: ['0', '1', '2']
+Fusing block b6 submodule 2 with keys: ['0', '1']
+After fusing, model structure:
+Network_1(
+  (quant): QuantStub()
+  (dequant): DeQuantStub()
+  (in_c): Sequential(
+    (0): Conv2dNormActivation(
+      (0): ConvReLU2d(
+        (0): Conv2d(1, 8, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+        (1): ReLU()
+      )
+      (1): Identity()
+      (2): Identity()
+    )
+    (1): Conv2dNormActivation(
+      (0): ConvReLU2d(
+        (0): Conv2d(8, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+        (1): ReLU()
+      )
+      (1): Identity()
+      (2): Identity()
+    )
+  )
+  (stages): Sequential(
+    (s1): Sequential(
+      (b1): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1))
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64)
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1))
+            (1): Identity()
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+      (b2): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1))
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64)
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1))
+            (1): Identity()
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+      (b3): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential(
+          (0): AvgPool2d(kernel_size=3, stride=(1, 2), padding=1)
+          (1): Sequential()
+        )
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1))
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 2), padding=(1, 1), groups=64)
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1))
+            (1): Identity()
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+    )
+    (s2): Sequential(
+      (b4): Block(
+        (after_block_activation): ReLU()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1))
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 1), padding=(1, 1), groups=64)
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(64, 56, kernel_size=(1, 1), stride=(1, 1))
+            (1): Identity()
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+      (b5): Block(
+        (after_block_activation): ReLU()
+        (shortcut): Sequential()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(56, 120, kernel_size=(1, 1), stride=(1, 1))
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(120, 120, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=120)
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(120, 56, kernel_size=(1, 1), stride=(1, 1))
+            (1): Identity()
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+    )
+    (s3): Sequential(
+      (b6): Block(
+        (after_block_activation): ReLU()
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(56, 120, kernel_size=(1, 1), stride=(1, 1))
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (1): Conv2dNormActivation(
+            (0): ConvReLU2d(
+              (0): Conv2d(120, 120, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=120)
+              (1): ReLU()
+            )
+            (1): Identity()
+            (2): Identity()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(120, 104, kernel_size=(1, 1), stride=(1, 1))
+            (1): Identity()
+          )
+        )
+        (ff): FloatFunctional(
+          (activation_post_process): Identity()
+        )
+      )
+    )
+  )
+  (feed_forward): Sequential(
+    (0): Conv2d(104, 10, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (1): BatchNorm2d(10, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): AdaptiveAvgPool2d(output_size=(1, 1))
+  )
+)
+Starting QAT training...
+Traceback (most recent call last):
+  File "c:\Users\fenel\Documents\dcase2024_task1_baseline\qat_1.py", line 436, in <module>
+    main()
+  File "c:\Users\fenel\Documents\dcase2024_task1_baseline\qat_1.py", line 399, in main
+    model_fp32_prepared = train_qat(model_fp32_prepared, train_loader,
+  File "c:\Users\fenel\Documents\dcase2024_task1_baseline\qat_1.py", line 344, in train_qat
+    outputs = model(inputs)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "c:\Users\fenel\Documents\dcase2024_task1_baseline\qat_1.py", line 231, in forward
+    x = self._forward_conv(x)
+  File "c:\Users\fenel\Documents\dcase2024_task1_baseline\qat_1.py", line 221, in _forward_conv
+    x = self.in_c(x)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\container.py", line 219, in forward
+    input = module(input)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\container.py", line 219, in forward
+    input = module(input)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\module.py", line 1603, in _call_impl
+    result = forward_call(*args, **kwargs)
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\ao\nn\intrinsic\qat\modules\conv_fused.py", line 623, in forward
+    self._conv_forward(input, self.weight_fake_quant(self.weight), self.bias))
+  File "C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\torch\nn\modules\conv.py", line 454, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Expected 3D (unbatched) or 4D (batched) input to conv2d, but got input of size: [256, 1, 1, 256, 65]

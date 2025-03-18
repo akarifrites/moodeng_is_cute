@@ -2,17 +2,22 @@ import pytorch_lightning as pl
 from pytorch_lightning.loggers import WandbLogger
 import torch
 import torchaudio
+import torch.nn as nn
 from torch.utils.data import DataLoader
 import argparse
 import torch.nn.functional as F
+import matplotlib.pyplot as plt
+import numpy as np
 import transformers
 import wandb
 import json
+import os
 
 from dataset.dcase24 import get_training_set, get_test_set, get_eval_set
 from helpers.init import worker_init_fn
-from models.baseline_og import get_model
-from models.mobilenet import MobileNetV3Audio
+from helpers.output_dim import get_model_output_dim
+from models.baseline_devices import get_model
+from models.testmodel_1 import testmodel_1
 from helpers.utils import mixstyle
 from helpers import nessi
 
@@ -39,8 +44,10 @@ class PLModule(pl.LightningModule):
             f_max=config.f_max
         )
 
-        freqm = torchaudio.transforms.FrequencyMasking(config.freqm, iid_masks=True)
-        timem = torchaudio.transforms.TimeMasking(config.timem, iid_masks=True)
+        freqm = torchaudio.transforms.FrequencyMasking(config.freqm, 
+                                                       iid_masks=True)
+        timem = torchaudio.transforms.TimeMasking(config.timem, 
+                                                  iid_masks=True)
 
         self.mel = torch.nn.Sequential(
             resample,
@@ -52,17 +59,16 @@ class PLModule(pl.LightningModule):
             timem
         )
 
-        # # the baseline model
-        # self.model = get_model(n_classes=config.n_classes,
-        #                        in_channels=config.in_channels,
-        #                        base_channels=config.base_channels,
-        #                        channels_multiplier=config.channels_multiplier,
-        #                        expansion_rate=config.expansion_rate
-        #                        )
+        # the baseline model
+        self.model = get_model(n_classes=config.n_classes,
+                               in_channels=config.in_channels,
+                               base_channels=config.base_channels,
+                               channels_multiplier=config.channels_multiplier,
+                               expansion_rate=config.expansion_rate
+                               )
 
-        # the mobilenet model
-        self.model = MobileNetV3Audio(n_classes=config.n_classes)
-
+        self.model = testmodel_1(num_classes=config.n_classes, device_embedding_dim=4)
+        
         self.device_ids = ['a', 'b', 'c', 's1', 's2', 's3', 's4', 's5', 's6']
         self.label_ids = ['airport', 'bus', 'metro', 'metro_station', 'park', 'public_square', 'shopping_mall',
                           'street_pedestrian', 'street_traffic', 'tram']
@@ -70,7 +76,7 @@ class PLModule(pl.LightningModule):
         self.device_groups = {'a': "real", 'b': "real", 'c': "real",
                               's1': "seen", 's2': "seen", 's3': "seen",
                               's4': "unseen", 's5': "unseen", 's6': "unseen"}
-
+        
         # pl 2 containers:
         self.training_step_outputs = []
         self.validation_step_outputs = []
@@ -81,20 +87,37 @@ class PLModule(pl.LightningModule):
         :param x: batch of raw audio signals (waveforms)
         :return: log mel spectrogram
         """
+        # # If input is [batch, time, channel], transpose to [batch, channel, time]
+        # if x.ndim == 3 and x.shape[-1] == 1:
+        #     x = x.transpose(1, 2)
+        # # If mixstyle unsqueezes to [batch, channel, time, 1], squeeze the last dimension
+        # elif x.ndim == 4 and x.shape[-1] == 1:
+        #     x = x.squeeze(-1)
+        # x = x.contiguous()  # Ensure tensor is stored in a contiguous block of memory
         x = self.mel(x)
         if self.training:
             x = self.mel_augment(x)
         x = (x + 1e-5).log()
+        # print(f"Log Mel Spectrogram Shape: {x.shape}")
+        if torch.isnan(x).any():
+            raise ValueError("NaNs detected in log mel spectrogram")
         return x
 
-    def forward(self, x):
+    def forward(self, x, device_id, apply_mel=True):
+        # Forward pass through the baseline model with device embeddings
         """
         :param x: batch of raw audio signals (waveforms)
+        :param device_id: batch of device ids
         :return: final model predictions
         """
-        x = self.mel_forward(x)
-        x = self.model(x)
-        return x
+        if apply_mel:
+            x = self.mel_forward(x) # Process the audio into log mel spectrograms
+        x = self.model(x, device_id) # Input MelSpec + Device_ID into the model, get output
+        return x   
+        # mel_spec = self.mel_forward(x) # Process the audio into log mel spectrograms
+        # logits = self.model(mel_spec, device_id)
+        # return logits   
+    
 
     def configure_optimizers(self):
         """
@@ -116,6 +139,7 @@ class PLModule(pl.LightningModule):
             "frequency": 1
         }
         return [optimizer], [lr_scheduler_config]
+      
 
     def training_step(self, train_batch, batch_idx):
         """
@@ -124,31 +148,60 @@ class PLModule(pl.LightningModule):
         :return: loss to update model parameters
         """
         x, files, labels, devices, cities = train_batch
-        labels = labels.type(torch.LongTensor)
-        labels = labels.to(self.device)
-        x = self.mel_forward(x)  # we convert the raw audio signals into log mel spectrograms
+        # print(f"x shape before mixstyle: {x.shape}")  # Debugging
+        labels = labels.type(torch.LongTensor).to(self.device)
+        devices = devices.to(torch.long)
+        # print("Labels dtype:", labels.dtype)
+        # print("Devices dtype:", devices.dtype)
+        # x = self.mel_forward(x)  # we convert the raw audio signals into log mel spectrograms
+
+        if devices.ndim > 1:
+            devices = devices.squeeze()
 
         if self.config.mixstyle_p > 0:
-            # frequency mixstyle
+            x = self.mel_forward(x)
             x = mixstyle(x, self.config.mixstyle_p, self.config.mixstyle_alpha)
-        y_hat = self.model(x)
-        samples_loss = F.cross_entropy(y_hat, labels, reduction="none")
-        loss = samples_loss.mean()
+
+        y_hat = self.forward(x, devices, apply_mel=False)  # Passing devices into forward method
+        if torch.isnan(y_hat).any():
+            raise ValueError("NaNs detected in model outputs")
+        loss = F.cross_entropy(y_hat, labels, reduction="mean")
+
+        # if self.config.mixstyle_p > 0:
+        #     # frequency mixstyle
+        #     if x.dim() == 3:  # Convert [batch, 1, time] -> [batch, 1, height, width]
+        #         x = x.unsqueeze(-1)  # Add a width dimension, making it [256, 1, 44100, 1]
+        #     x = mixstyle(x, self.config.mixstyle_p, self.config.mixstyle_alpha)
+        # # y_hat = self.model(x, devices)
+        # devices = devices.to(torch.long)  # Ensure dtype is correct
+        # y_hat = self.forward(x, devices)  # Passing devices into forward method
+        # samples_loss = F.cross_entropy(y_hat, labels, reduction="none")
+        # loss = samples_loss.mean()
 
         self.log("lr", self.trainer.optimizers[0].param_groups[0]['lr'])
         self.log("epoch", self.current_epoch)
         self.log("train/loss", loss.detach().cpu())
         return loss
+    
+    # def on_after_backward(self):
+    #     # This hook is called automatically after the backward pass.
+    #     print("Gradients after backward pass:")
+    #     for name, param in self.named_parameters():
+    #         if param.grad is not None:
+    #             print(f"{name}: grad mean = {param.grad.abs().mean().item()}")
 
     def on_train_epoch_end(self):
         pass
 
     def validation_step(self, val_batch, batch_idx):
         x, files, labels, devices, cities = val_batch
-
-        y_hat = self.forward(x)
+        devices = devices.to(torch.long)  # Ensure dtype is correct
+        y_hat = self.forward(x, devices)
         labels = labels.type(torch.LongTensor)
         labels = labels.to(self.device)
+        devices = devices.to(torch.long)
+        # print("Labels dtype:", labels.dtype)
+        # print("Devices dtype:", devices.dtype)
         samples_loss = F.cross_entropy(y_hat, labels, reduction="none")
 
         # for computing accuracy
@@ -230,16 +283,19 @@ class PLModule(pl.LightningModule):
         x, files, labels, devices, cities = test_batch
         labels = labels.type(torch.LongTensor)
         labels = labels.to(self.device)
+        devices = devices.to(torch.long)
+        # print("Labels dtype:", labels.dtype)
+        # print("Devices dtype:", devices.dtype)
 
         # maximum memory allowance for parameters: 128 KB
         # baseline has 61148 parameters -> we can afford 16-bit precision
         # since 61148 * 16 bit ~ 122 kB
 
-        # assure fp16
-        self.model.half()
-        x = self.mel_forward(x)
-        x = x.half()
-        y_hat = self.model(x)
+        # # assure fp16
+        # self.model.half()
+        # x = self.mel_forward(x)
+        # x = x.half()
+        y_hat = self.forward(x, devices)
         samples_loss = F.cross_entropy(y_hat, labels, reduction="none")
 
         # for computing accuracy
@@ -273,6 +329,7 @@ class PLModule(pl.LightningModule):
         self.test_step_outputs.append(results)
 
     def on_test_epoch_end(self):
+        print("Test epoch ended; computing metrics...")
         # convert a list of dicts to a flattened dict
         outputs = {k: [] for k in self.test_step_outputs[0]}
         for step_output in self.test_step_outputs:
@@ -317,14 +374,14 @@ class PLModule(pl.LightningModule):
         self.test_step_outputs.clear()
 
     def predict_step(self, eval_batch, batch_idx, dataloader_idx=0):
-        x, files = eval_batch
+        x, files, devices = eval_batch
 
         # assure fp16
-        self.model.half()
+        # self.model.half()
 
-        x = self.mel_forward(x)
-        x = x.half()
-        y_hat = self.model(x)
+        # x = self.mel_forward(x)
+        # x = x.half()
+        y_hat = self.forward(x, devices)
 
         return files, y_hat
 
@@ -348,6 +405,13 @@ def train(config):
                           num_workers=config.num_workers,
                           batch_size=config.batch_size,
                           shuffle=True)
+    
+    # Get the first batch from the DataLoader
+    first_batch = next(iter(train_dl))
+    x, files, labels, devices, cities = first_batch
+
+    # print("Devices in the first batch:")
+    # print(devices)
 
     test_dl = DataLoader(dataset=get_test_set(),
                          worker_init_fn=worker_init_fn,
@@ -365,8 +429,6 @@ def train(config):
     wandb_logger.experiment.config['MACs'] = macs
     wandb_logger.experiment.config['Parameters'] = params
 
-    # create the pytorch lightening trainer by specifying the number of epochs to train, the logger,
-    # on which kind of device(s) to train and possible callbacks
     trainer = pl.Trainer(max_epochs=config.n_epochs,
                          logger=wandb_logger,
                          accelerator='gpu',
@@ -381,6 +443,53 @@ def train(config):
     trainer.test(ckpt_path='last', dataloaders=test_dl)
 
     wandb.finish()
+
+
+def validate(config):
+
+    import os
+    from sklearn import preprocessing
+    import pandas as pd
+    import torch.nn.functional as F
+    from dataset.dcase24 import dataset_config
+    # logging is done using wandb
+    wandb_logger = WandbLogger(
+        project=config.project_name,
+        notes="Baseline System for DCASE'24 Task 1.",
+        tags=["DCASE24"],
+        config=config,  # this logs all hyperparameters for us
+        name=config.experiment_name
+    )
+
+    assert config.ckpt_id is not None, "A value for argument 'ckpt_id' must be provided."
+    ckpt_dir = os.path.join(config.project_name, config.ckpt_id, "checkpoints")
+    assert os.path.exists(ckpt_dir), f"No such folder: {ckpt_dir}"
+    ckpt_file = os.path.join(ckpt_dir, "last.ckpt")
+    assert os.path.exists(ckpt_file), f"No such file: {ckpt_file}. Implement your own mechanism to select" \
+                                      f"the desired checkpoint."
+
+    # train dataloader
+    assert config.subset in {100, 50, 25, 10, 5}, "Specify an integer value in: {100, 50, 25, 10, 5} to use one of " \
+                                                  "the given subsets."
+
+    val_dl = DataLoader(dataset=get_test_set(),
+                         worker_init_fn=worker_init_fn,
+                         num_workers=config.num_workers,
+                         batch_size=config.batch_size)
+
+    # create pytorch lightening module
+    pl_module = PLModule(config)
+    pl_module = PLModule.load_from_checkpoint(ckpt_file, config=config)
+
+    # create the pytorch lightening trainer by specifying the number of epochs to train, the logger,
+    # on which kind of device(s) to train and possible callbacks
+    trainer = pl.Trainer(max_epochs=config.n_epochs,
+                         logger=wandb_logger,
+                         accelerator='gpu',
+                         devices=1,
+                         precision=config.precision)
+
+    trainer.test(pl_module, dataloaders=val_dl)
 
 
 def evaluate(config):
@@ -518,6 +627,7 @@ if __name__ == '__main__':
     parser.add_argument('--f_max', type=int, default=None)
 
     args = parser.parse_args()
+    # validate(args)
     if args.evaluate:
         evaluate(args)
     else:

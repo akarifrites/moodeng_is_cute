@@ -11,12 +11,11 @@ import wandb
 import librosa
 import os
 
-from models.baseline import get_model, initialize_weights, Block
+from models.baseline_devices import get_model, initialize_weights, Block
 from models.helpers.utils import make_divisible
 from dataset.dcase24 import get_training_set, get_test_set
 
 import warnings
-
 warnings.filterwarnings('ignore')
 
 # model_path = 'model_state_dict.pt'
@@ -78,6 +77,7 @@ class MelSpec(nn.Module):
         )
 
     def forward(self,x):
+        # print("Input tensor shape in model.forward:", x.shape)
         x = self.mel(x)
         x = (x + 1e-5).log()
         return x
@@ -234,6 +234,18 @@ class Network_1(nn.Module):
         logits = x.squeeze(2).squeeze(2)
         return logits
     
+        # def quantized_forward(self, x):
+        # """
+        # :param x: batch of spectrograms
+        # :return: final model predictions
+        # """
+        # # quantized forward needs to be done on cpu
+        # orig_device = x.device
+        # x = x.cpu()
+        # self.model_int8.cpu()
+        # y = self.model_int8(x)
+        # return y.to(orig_device)
+    
 
 def get_model_1(n_classes=10, in_channels=1, base_channels=32, channels_multiplier=1.8, expansion_rate=2.1,
             n_blocks=(3, 2, 1), strides=None, quantize=False, mel_forward=False):
@@ -319,6 +331,7 @@ def evaluate(model, dataloader, MelSpecGenerator):
             labels = batch[2]
             raw_waveform = batch[0]
             mel_spec = MelSpecGenerator(raw_waveform)
+            print("evaluate mel_spec, tensor shape:", mel_spec.shape)
             outputs = model(mel_spec)
             _, predicted = torch.max(outputs.data, dim=1)
             correct += (predicted == labels).sum().item()
@@ -333,11 +346,30 @@ def train_qat(model, train_loader, num_epochs=5, learning_rate=1e-3):
     criterion = nn.CrossEntropyLoss()  # Adjust loss if needed
     for epoch in range(num_epochs):
         running_loss = 0.0
-        for batch in train_loader:
+        for batch_idx, batch in enumerate(train_loader):
             # inputs, _, labels = batch  # adjust if your dataset returns a different tuple
             inputs = batch[0]
             labels = batch[-1]
+
+            # # Debug prints to inspect inputs
+            # if batch_idx == 0 and epoch == 0:  # Only print once per run, so it doesn't flood your logs
+            #     print("==== Debug Info (Before MelSpec) ====")
+            #     print(f"Type of inputs: {type(inputs)}")
+            #     print(f"Shape of inputs: {inputs.shape}")
+            #     print(f"Data type: {inputs.dtype}")
+            #     print(f"Min: {inputs.min().item():.4f}, Max: {inputs.max().item():.4f}")
+            #     # If it's not too large, you could also print a small portion:
+                # print("Sample values:", inputs[0, :10])  # for 1D data, or adapt to your shape
+
             inputs = MelSpec()(inputs)
+            # print("After MelSpec, tensor shape:", inputs.shape)
+
+            # # Another debug print to see the transformed shape
+            # if batch_idx == 0 and epoch == 0:
+            #     print("==== Debug Info (After MelSpec) ====")
+            #     print(f"Shape after MelSpec: {inputs.shape}")
+            #     print(f"Min: {inputs.min().item():.4f}, Max: {inputs.max().item():.4f}")
+                
             optimizer.zero_grad()
             outputs = model(inputs)
             loss = criterion(outputs, labels)
@@ -346,20 +378,9 @@ def train_qat(model, train_loader, num_epochs=5, learning_rate=1e-3):
             running_loss += loss.item()
         avg_loss = running_loss / len(train_loader)
         print(f"Epoch [{epoch+1}/{num_epochs}], Loss: {avg_loss:.4f}")
+
     return model
 
-# # Calibration step using a representative dataset
-# def calibrate(model, data_loader, MelSpecGenerator):
-#     model.eval()
-#     with torch.no_grad():
-#         for idx, inputs in enumerate(data_loader):
-#             raw_waveform = inputs[0]
-#             mel_spec = MelSpecGenerator(raw_waveform)
-#             model(mel_spec)
-#             print(f"Calibrating: {idx+1}/{len(data_loader)}", end='\r')
-#             # For demonstration, calibrate on one batch only
-#             if idx == 0:
-#                 break
 
 def main():
     # Initialize wandb
@@ -417,6 +438,41 @@ def main():
 
     # Create a test dataloader
     test_loader = DataLoader(get_test_set(), batch_size=256, shuffle=True)
+
+    # import matplotlib.pyplot as plt
+
+    # # Suppose raw_waveform is a single example audio tensor with shape [1, 44100]
+    # raw_waveform = torch.randn((1, 44100))
+
+    # # Compute mel spectrogram using the training pipeline
+    # mel_spec_train = MelSpec()(raw_waveform)  # Shape: [1, 256, 65] if unsqueeze isn't applied
+    # # Compute mel spectrogram using the evaluation pipeline (if it's defined differently)
+    # mel_spec_eval = MelSpec()(raw_waveform)  # Replace with MelSpecGenerator(raw_waveform) if different
+
+    # # Remove the batch and channel dimensions for visualization
+    # # This assumes the spectrogram shape is [batch, channel, mel_bins, time_frames]
+    # spec_train = mel_spec_train.squeeze().detach().numpy()  # Shape: [256, 65]
+    # spec_eval = mel_spec_eval.squeeze().detach().numpy()     # Shape: [256, 65]
+
+    # # Plot the two spectrograms side-by-side
+    # plt.figure(figsize=(12, 5))
+
+    # plt.subplot(1, 2, 1)
+    # plt.imshow(spec_train, aspect='auto', origin='lower')
+    # plt.title('Training Mel Spectrogram')
+    # plt.xlabel('Time Frames')
+    # plt.ylabel('Mel Bins')
+    # plt.colorbar()
+
+    # plt.subplot(1, 2, 2)
+    # plt.imshow(spec_eval, aspect='auto', origin='lower')
+    # plt.title('Evaluation Mel Spectrogram')
+    # plt.xlabel('Time Frames')
+    # plt.ylabel('Mel Bins')
+    # plt.colorbar()
+
+    # plt.tight_layout()
+    # plt.show()
 
     # Evaluate both quantized and unquantized models
     quantized_accuracy = evaluate(model_int8, test_loader, MelSpecGenerator)

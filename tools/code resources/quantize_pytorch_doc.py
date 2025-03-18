@@ -1,6 +1,6 @@
 import torch
 
-from models.baseline import get_model
+from models.baseline_devices import get_model
 
 
 # define a floating point model where some layers could be statically quantized

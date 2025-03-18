@@ -1,0 +1,1516 @@
+2025-03-18 00:03:51,109 INFO    StreamThr :18148 [internal.py:wandb_internal():85] W&B internal server running at pid: 18148, started at: 2025-03-18 00:03:51.109530
+2025-03-18 00:03:51,109 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status
+2025-03-18 00:03:51,109 INFO    WriterThread:18148 [datastore.py:open_for_write():87] open: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\run-yfulrgzm.wandb
+2025-03-18 00:03:51,109 DEBUG   SenderThread:18148 [sender.py:send():391] send: header
+2025-03-18 00:03:51,166 DEBUG   SenderThread:18148 [sender.py:send():391] send: run
+2025-03-18 00:03:53,078 INFO    SenderThread:18148 [dir_watcher.py:__init__():211] watching files in: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files
+2025-03-18 00:03:53,078 INFO    SenderThread:18148 [sender.py:_start_run_threads():1200] run started: yfulrgzm with start time 1742227431.10953
+2025-03-18 00:03:53,078 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: check_version
+2025-03-18 00:03:53,078 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: check_version
+2025-03-18 00:03:53,517 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: run_start
+2025-03-18 00:03:54,822 DEBUG   HandlerThread:18148 [system_info.py:__init__():26] System info init
+2025-03-18 00:03:54,822 DEBUG   HandlerThread:18148 [system_info.py:__init__():41] System info init done
+2025-03-18 00:03:54,822 INFO    HandlerThread:18148 [system_monitor.py:start():194] Starting system monitor
+2025-03-18 00:03:54,822 INFO    SystemMonitor:18148 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-03-18 00:03:54,822 INFO    HandlerThread:18148 [system_monitor.py:probe():214] Collecting system info
+2025-03-18 00:03:54,831 INFO    SystemMonitor:18148 [interfaces.py:start():188] Started cpu monitoring
+2025-03-18 00:03:54,831 INFO    SystemMonitor:18148 [interfaces.py:start():188] Started disk monitoring
+2025-03-18 00:03:54,831 INFO    SystemMonitor:18148 [interfaces.py:start():188] Started gpu monitoring
+2025-03-18 00:03:54,839 INFO    SystemMonitor:18148 [interfaces.py:start():188] Started memory monitoring
+2025-03-18 00:03:54,840 DEBUG   HandlerThread:18148 [system_info.py:probe():152] Probing system
+2025-03-18 00:03:54,852 INFO    SystemMonitor:18148 [interfaces.py:start():188] Started network monitoring
+2025-03-18 00:03:54,852 DEBUG   HandlerThread:18148 [system_info.py:_probe_git():137] Probing git
+2025-03-18 00:03:54,921 DEBUG   HandlerThread:18148 [system_info.py:_probe_git():145] Probing git done
+2025-03-18 00:03:54,921 DEBUG   HandlerThread:18148 [system_info.py:probe():200] Probing system done
+2025-03-18 00:03:54,921 DEBUG   HandlerThread:18148 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.22631-SP0', 'python': '3.10.14', 'heartbeatAt': '2025-03-17T16:03:54.848547', 'startedAt': '2025-03-17T16:03:51.093963', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'c:\\Users\\fenel\\Documents\\dcase2024_task1_baseline\\qat_1.py', 'codePathLocal': 'qat_1.py', 'codePath': 'qat_1.py', 'git': {'remote': 'https://github.com/akarifrites/moodeng_is_cute.git', 'commit': '0ef53f9732f41fdbabc0466c4f6dbbecbfe3e448'}, 'email': 'fenellachua@gmail.com', 'root': 'C:/Users/fenel/Documents/dcase2024_task1_baseline', 'host': 'Akari', 'username': 'fenel', 'executable': 'C:\\Users\\fenel\\anaconda3\\envs\\d24_t1\\python.exe', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 2304.0, 'min': 0.0, 'max': 2304.0}, 'cpu_freq_per_core': [{'current': 2304.0, 'min': 0.0, 'max': 2304.0}], 'disk': {'/': {'total': 475.83886337280273, 'used': 466.9336814880371}}, 'gpu': 'NVIDIA GeForce RTX 3060 Laptop GPU', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3060 Laptop GPU', 'memory_total': 6442450944}], 'memory': {'total': 15.588001251220703}}
+2025-03-18 00:03:54,921 INFO    HandlerThread:18148 [system_monitor.py:probe():224] Finished collecting system info
+2025-03-18 00:03:54,921 INFO    HandlerThread:18148 [system_monitor.py:probe():227] Publishing system info
+2025-03-18 00:03:54,921 DEBUG   HandlerThread:18148 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2025-03-18 00:03:55,094 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\conda-environment.yaml
+2025-03-18 00:03:56,871 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:03:56,871 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:03:59,392 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:03:59,392 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:03:59,408 DEBUG   HandlerThread:18148 [system_info.py:_save_conda():224] Saving conda packages done
+2025-03-18 00:03:59,413 INFO    HandlerThread:18148 [system_monitor.py:probe():229] Finished publishing system info
+2025-03-18 00:03:59,413 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:03:59,413 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: keepalive
+2025-03-18 00:03:59,413 DEBUG   SenderThread:18148 [sender.py:send():391] send: files
+2025-03-18 00:03:59,413 INFO    SenderThread:18148 [sender.py:_save_file():1466] saving file wandb-metadata.json with policy now
+2025-03-18 00:03:59,665 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: python_packages
+2025-03-18 00:03:59,665 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: python_packages
+2025-03-18 00:03:59,665 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:03:59,665 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:03:59,665 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:00,075 DEBUG   SenderThread:18148 [sender.py:send():391] send: telemetry
+2025-03-18 00:04:00,124 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\conda-environment.yaml
+2025-03-18 00:04:00,124 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:04:00,124 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\wandb-metadata.json
+2025-03-18 00:04:00,124 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\requirements.txt
+2025-03-18 00:04:00,451 INFO    wandb-upload_0:18148 [upload_job.py:push():130] Uploaded file C:\Users\fenel\AppData\Local\Temp\tmpxkc4md7ywandb\ny8bcbmb-wandb-metadata.json
+2025-03-18 00:04:00,698 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:01,642 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:04:01,705 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:01,927 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:01,927 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:02,133 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:04:02,724 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:03,728 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:04,458 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:04,458 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:04,741 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:05,748 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:06,689 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:04:06,752 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:07,017 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:07,017 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:07,762 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:08,771 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:09,559 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:09,559 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:09,773 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:10,777 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:11,784 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:12,125 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:12,125 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:12,694 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:04:12,793 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:13,808 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:14,679 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:14,680 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:04:14,681 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:14,682 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:04:14,814 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:15,829 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:16,845 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:17,256 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:17,256 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:17,857 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:18,046 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:04:18,867 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:19,826 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:19,826 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:19,878 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:20,887 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:21,887 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:22,387 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:22,387 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:22,900 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:23,732 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:04:23,901 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:24,311 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\config.yaml
+2025-03-18 00:04:24,908 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:24,954 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:24,954 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:25,909 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:26,913 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:27,485 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:27,485 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:27,917 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:28,926 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:29,689 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:04:29,689 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:04:29,934 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:30,036 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:04:30,044 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:30,044 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:30,942 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:31,946 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:32,955 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:33,960 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:34,960 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:35,721 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:04:35,963 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:36,977 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:37,260 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:37,260 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:37,985 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:39,002 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:39,812 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:39,812 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:40,015 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:40,739 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:04:41,016 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:42,027 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:42,339 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:42,339 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:43,043 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:44,051 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:44,709 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:04:44,709 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:04:45,061 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:46,070 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:46,117 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:04:46,942 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:46,942 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:47,084 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:48,093 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:49,102 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:49,536 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:49,536 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:50,110 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:51,111 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:51,769 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:04:52,099 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:52,099 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:52,116 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:53,116 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:54,118 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:54,642 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:54,642 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:54,860 DEBUG   SystemMonitor:18148 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-03-18 00:04:54,860 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:04:55,126 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:56,126 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:56,867 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:04:57,134 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:57,228 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:57,228 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:58,141 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:59,143 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:04:59,725 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:04:59,725 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:04:59,757 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:04:59,757 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:00,159 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:01,170 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:02,187 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:02,320 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:02,320 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:02,743 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:05:03,191 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:04,201 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:04,851 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:04,851 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:05,210 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:06,221 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:07,231 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:07,801 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:05:08,239 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:09,241 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:10,243 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:11,253 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:12,257 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:12,824 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:05:13,268 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:14,276 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:14,693 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:14,693 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:14,740 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:05:14,740 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:05:15,284 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:16,300 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:17,217 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:17,217 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:17,311 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:18,146 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:05:18,319 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:19,321 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:19,784 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:19,784 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:20,329 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:21,338 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:22,324 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:22,325 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:22,346 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:23,352 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:23,882 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:05:24,362 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:24,862 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:05:25,363 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:26,379 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:26,937 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:26,937 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:27,387 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:28,408 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:28,887 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:05:29,413 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:29,523 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:29,523 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:29,768 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:05:29,768 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:05:30,422 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:31,422 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:32,074 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:32,074 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:32,429 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:33,436 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:34,094 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:05:34,438 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:34,611 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:34,611 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:35,445 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:36,453 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:37,168 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:37,168 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:37,468 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:38,477 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:39,483 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:39,703 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:39,703 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:39,885 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:05:40,491 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:41,505 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:42,315 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:42,315 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:42,513 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:43,528 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:44,534 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:44,784 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:05:44,784 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:05:44,878 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:44,878 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:45,100 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:05:45,548 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:46,551 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:47,563 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:48,579 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:49,593 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:50,011 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:50,011 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:50,600 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:50,915 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:05:51,616 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:52,544 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:52,544 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:52,618 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:53,630 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:54,643 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:54,873 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:05:55,139 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:55,139 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:55,655 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:56,660 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:56,925 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:05:57,673 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:57,705 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:57,705 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:05:58,676 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:59,684 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:05:59,793 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:05:59,793 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:06:00,242 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:00,242 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:00,692 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:01,695 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:02,205 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:06:02,703 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:02,797 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:02,797 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:03,708 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:04,718 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:05,054 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:06:05,362 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:05,362 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:05,726 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:06,734 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:07,749 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:07,946 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:06:07,978 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:07,978 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:08,759 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:09,770 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:10,594 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:10,594 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:10,783 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:11,784 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:12,796 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:12,969 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:06:13,214 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:13,214 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:13,797 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:14,794 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:06:14,794 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:06:14,804 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:15,805 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:15,805 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:15,805 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:16,818 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:17,823 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:18,163 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:06:18,383 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:18,383 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:18,838 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:19,838 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:20,842 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:20,970 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:20,970 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:21,847 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:22,861 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:23,531 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:23,531 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:23,870 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:23,995 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:06:24,875 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:24,875 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:06:25,892 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:26,895 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:27,906 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:28,710 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:28,710 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:28,915 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:29,009 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:06:29,820 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:06:29,820 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:06:29,920 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:30,939 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:31,947 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:32,962 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:33,261 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:33,261 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:33,969 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:34,202 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:06:34,971 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:35,869 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:35,869 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:35,988 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:36,993 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:38,003 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:38,438 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:38,438 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:39,018 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:39,994 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:06:40,024 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:41,024 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:41,024 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:41,056 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:42,068 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:43,055 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:43,592 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:43,592 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:44,063 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:44,828 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:06:44,828 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:06:45,077 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:45,286 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:06:46,079 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:46,188 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:46,189 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:47,085 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:48,095 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:48,766 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:48,767 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:49,111 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:50,113 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:51,009 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:06:51,104 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:51,338 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:51,338 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:52,117 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:53,122 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:53,918 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:53,919 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:54,137 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:54,892 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:06:55,145 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:56,030 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:06:56,160 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:56,524 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:56,524 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:57,168 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:58,171 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:59,100 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:59,100 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:06:59,177 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:06:59,836 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:06:59,837 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:07:00,192 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:01,189 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:01,329 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:07:01,675 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:01,675 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:02,194 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:03,199 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:04,206 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:05,220 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:06,224 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:07,048 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:07:07,220 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:08,232 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:08,964 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:08,965 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:09,243 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:10,244 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:11,249 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:11,531 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:11,531 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:12,264 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:13,044 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:07:13,277 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:14,126 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:14,127 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:14,285 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:14,937 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:07:14,939 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:07:15,273 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:16,277 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:16,735 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:16,735 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:17,287 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:18,304 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:18,362 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:07:19,291 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:19,307 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:19,307 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:20,303 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:21,307 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:22,323 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:23,326 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:23,948 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:23,948 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:24,091 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:07:24,329 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:24,920 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:07:25,342 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:26,343 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:26,533 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:26,533 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:27,352 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:28,362 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:29,096 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:07:29,369 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:29,852 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:07:29,852 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:07:30,382 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:31,117 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:31,117 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:31,122 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:07:31,386 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:32,392 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:33,412 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:33,682 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:33,682 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:34,238 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:07:34,412 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:35,402 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:36,252 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:36,252 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:36,410 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:37,412 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:38,417 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:38,826 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:38,826 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:39,433 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:40,095 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:07:40,434 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:41,448 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:42,452 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:43,464 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:44,183 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:44,183 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:44,468 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:44,866 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:07:44,866 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:07:45,313 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:07:45,472 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:46,480 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:46,752 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:46,752 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:47,483 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:48,499 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:49,372 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:49,372 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:49,514 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:50,517 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:51,132 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:07:51,528 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:51,957 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:51,957 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:52,530 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:53,541 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:54,556 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:54,582 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:54,582 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:54,905 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:07:55,558 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:56,146 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:07:56,575 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:57,148 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:57,148 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:57,579 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:58,582 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:59,572 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:07:59,729 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:59,732 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:07:59,889 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:07:59,889 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:08:00,575 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:01,310 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:08:01,579 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:02,306 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:02,306 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:02,587 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:03,593 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:04,595 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:04,909 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:04,909 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:05,602 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:06,610 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:07,144 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:08:07,490 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:07,490 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:07,616 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:08,624 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:09,639 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:10,065 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:10,065 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:10,651 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:11,666 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:12,153 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:08:12,637 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:12,637 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:12,670 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:13,686 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:14,693 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:14,895 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:08:14,896 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:08:15,241 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:15,242 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:15,709 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:16,708 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:17,353 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:08:17,699 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:17,840 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:17,842 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:18,703 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:19,706 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:20,710 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:21,726 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:22,715 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:23,171 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:08:23,732 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:24,740 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:24,913 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:08:25,145 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:25,145 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:25,795 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:26,782 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:27,755 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:27,755 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:27,786 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:28,794 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:29,172 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:08:29,806 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:29,901 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:08:29,903 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:08:30,313 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:30,313 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:30,819 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:31,829 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:32,839 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:32,911 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:32,911 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:33,844 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:34,224 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:08:34,853 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:35,507 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:35,507 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:35,862 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:36,870 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:37,878 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:38,887 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:39,893 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:40,125 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:40,126 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:40,157 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:08:40,902 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:41,907 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:42,685 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:42,685 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:42,922 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:43,933 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:44,914 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:08:44,914 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:08:44,946 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:45,346 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:08:45,951 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:46,965 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:47,264 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:47,264 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:47,971 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:48,974 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:49,884 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:49,884 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:49,990 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:51,000 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:51,180 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:08:52,004 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:53,009 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:54,023 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:54,479 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:54,479 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:54,923 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:08:55,031 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:56,035 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:56,206 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:08:57,044 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:58,059 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:59,077 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:08:59,156 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:59,156 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:08:59,931 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:08:59,931 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:09:00,086 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:00,286 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:09:01,091 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:01,289 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:09:01,722 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:01,722 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:02,102 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:03,112 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:04,119 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:05,126 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:06,134 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:06,303 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:06,305 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:07,139 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:07,233 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:09:08,148 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:08,870 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:08,872 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:09,154 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:10,158 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:11,162 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:11,435 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:11,435 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:12,168 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:12,235 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:09:13,183 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:14,029 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:14,029 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:14,188 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:14,952 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:09:14,952 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:09:15,202 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:16,195 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:16,658 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:16,658 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:17,200 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:17,345 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:09:18,202 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:19,232 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:19,232 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:19,234 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:20,230 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:21,254 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:21,795 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:21,795 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:22,259 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:23,261 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:23,272 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:09:24,274 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:24,381 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:24,381 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:24,924 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:09:25,297 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:26,295 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:26,995 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:26,995 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:27,307 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:28,312 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:29,271 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:09:29,302 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:29,962 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:09:29,962 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:09:30,321 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:31,315 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:31,571 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:31,571 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:32,339 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:33,327 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:34,332 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:34,362 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:09:35,342 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:36,352 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:37,362 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:38,367 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:38,795 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:38,795 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:39,382 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:40,289 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:09:40,385 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:41,386 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:42,396 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:43,408 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:43,408 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:43,408 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:44,410 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:44,981 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:09:44,981 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:09:45,346 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:09:45,426 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:45,982 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:45,982 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:46,442 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:47,446 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:48,451 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:49,465 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:50,472 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:51,248 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:51,248 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:51,295 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:09:51,487 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:52,488 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:53,503 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:53,822 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:53,822 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:54,506 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:54,931 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:09:55,511 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:56,317 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:09:56,396 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:56,398 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:56,521 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:57,537 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:58,555 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:59,001 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:59,001 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:09:59,557 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:09:59,983 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:09:59,983 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:10:00,571 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:01,381 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:10:01,573 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:01,589 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:01,589 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:02,585 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:03,597 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:04,166 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:04,167 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:04,606 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:05,614 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:06,615 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:06,755 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:06,755 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:07,352 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:10:07,606 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:08,618 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:09,349 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:09,349 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:09,634 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:10,644 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:11,656 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:12,682 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:13,359 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:10:13,676 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:14,689 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:14,721 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:14,722 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:15,004 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:10:15,004 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:10:15,694 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:16,701 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:17,301 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:17,301 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:17,706 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:18,712 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:19,356 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:10:19,714 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:19,870 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:19,871 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:20,722 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:21,727 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:22,481 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:22,481 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:22,732 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:23,738 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:24,366 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:10:24,738 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:24,943 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:10:25,051 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:25,051 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:25,746 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:26,749 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:27,628 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:27,628 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:27,769 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:28,763 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:29,389 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:10:29,765 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:30,003 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:10:30,004 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:10:30,206 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:30,207 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:30,774 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:31,793 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:32,798 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:32,829 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:32,830 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:33,807 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:34,468 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:10:34,811 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:34,904 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:10:35,391 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:35,391 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:35,818 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:36,819 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:37,810 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:37,982 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:37,982 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:38,826 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:39,833 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:40,370 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:10:40,558 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:40,558 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:40,826 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:41,830 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:42,834 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:43,162 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:43,162 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:43,837 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:44,844 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:45,001 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:10:45,003 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:10:45,381 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:10:45,724 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:45,725 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:45,850 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:46,840 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:47,845 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:48,302 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:48,302 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:48,853 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:49,862 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:50,382 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:10:50,869 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:51,874 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:52,887 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:53,578 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:53,578 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:53,899 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:54,911 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:54,960 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:10:55,916 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:56,186 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:56,187 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:56,378 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:10:56,929 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:57,945 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:58,756 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:58,756 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:10:58,949 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:10:59,955 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:00,001 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:11:00,001 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:11:00,960 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:01,312 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:01,312 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:01,431 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:11:01,975 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:02,985 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:03,892 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:03,892 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:03,995 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:05,002 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:06,005 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:06,495 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:06,495 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:07,008 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:07,433 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:11:08,019 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:09,029 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:09,095 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:09,095 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:10,041 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:11,056 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:11,672 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:11,672 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:12,060 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:13,066 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:13,435 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:11:14,076 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:14,265 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:14,265 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:15,005 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:11:15,007 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:11:15,086 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:16,098 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:16,866 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:16,871 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:17,099 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:18,136 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:18,441 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:11:19,134 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:20,156 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:21,151 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:22,148 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:23,181 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:23,476 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:11:24,181 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:24,981 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:11:25,178 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:26,181 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:27,175 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:27,796 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:27,796 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:28,180 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:29,299 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:29,487 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:11:30,031 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:11:30,041 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:11:30,229 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:31,426 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:32,400 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:33,345 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:34,403 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:34,592 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:11:34,815 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:34,818 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:35,591 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:36,556 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:37,593 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:38,621 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:39,622 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:40,382 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:40,386 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:40,460 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:11:40,671 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:41,651 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:42,651 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:43,751 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:44,656 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:45,043 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:11:45,046 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:11:45,482 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:11:45,695 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:45,931 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:45,936 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:46,706 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:47,716 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:48,752 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:49,816 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:50,601 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:11:50,826 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:51,851 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:53,041 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:54,065 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:55,225 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:55,255 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:11:56,116 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:56,555 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:11:57,140 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:57,540 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:57,547 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:11:58,166 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:11:59,170 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:00,056 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:12:00,061 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:12:00,189 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:01,186 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:02,211 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:02,551 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:12:03,056 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:12:03,061 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:12:03,225 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:04,258 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:05,242 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:06,255 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:07,264 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:07,610 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:12:08,276 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:09,092 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:12:09,096 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:12:09,308 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:10,356 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:11,538 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:12,401 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:12,646 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:12:13,421 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:14,441 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:15,088 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:12:15,092 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:12:15,460 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:16,565 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:17,485 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:17,706 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:12:18,543 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:19,486 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:20,495 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:21,141 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:12:21,145 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:12:21,515 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:22,515 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:23,113 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:12:23,545 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:24,552 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:25,458 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:12:25,556 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:26,558 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:27,606 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:28,598 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:28,656 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:12:29,605 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:30,090 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:12:30,096 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:12:30,615 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:31,618 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:32,644 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:33,666 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:33,686 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:12:34,390 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:12:34,439 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:12:34,655 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:35,665 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:36,700 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:37,690 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:38,750 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:38,946 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:12:39,701 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:40,715 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:41,730 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:42,740 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:43,735 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:44,681 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:12:44,753 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:45,110 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:12:45,115 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:12:45,736 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:46,740 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:47,940 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:48,765 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:49,781 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:49,961 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:12:50,795 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:51,815 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:52,815 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:53,831 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:54,851 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:55,397 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:12:55,402 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:12:55,851 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:56,986 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:57,850 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:58,864 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:12:59,872 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:00,118 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:13:00,127 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:13:00,539 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:13:00,886 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:01,895 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:02,901 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:03,925 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:03,940 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:13:03,945 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:13:04,915 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:05,685 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:13:06,415 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:06,960 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:07,970 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:08,970 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:09,975 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:10,871 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:13:10,970 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:11,415 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:13:11,420 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:13:12,005 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:13,140 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:14,025 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:15,029 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:15,130 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:13:15,135 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:13:15,800 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:13:16,055 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:17,075 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:17,685 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:13:17,685 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:13:18,095 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:19,090 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:20,087 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:21,094 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:21,726 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:13:22,290 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:23,115 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:24,135 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:25,159 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:25,455 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:13:26,160 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:26,790 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:13:27,169 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:28,160 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:29,170 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:30,130 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:13:30,135 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:13:30,195 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:31,385 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:32,220 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:32,765 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:13:33,226 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:34,225 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:35,250 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:36,260 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:37,255 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:38,225 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:13:38,315 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:39,291 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:40,608 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:41,325 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:42,426 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:43,355 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:43,975 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:13:44,370 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:45,265 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:13:45,275 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:13:45,385 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:46,415 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:47,520 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:47,555 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:13:47,563 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:13:48,435 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:49,445 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:49,821 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:13:50,459 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:51,461 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:52,455 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:53,455 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:54,455 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:55,051 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:13:55,496 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:55,518 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:13:56,530 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:57,555 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:58,675 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:13:59,623 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:00,135 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:14:00,141 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:14:00,506 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:14:00,590 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:00,905 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:00,910 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:01,626 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:02,636 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:03,669 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:04,658 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:05,683 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:05,915 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:14:06,695 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:07,718 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:08,605 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:08,609 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:08,715 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:09,765 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:10,765 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:11,945 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:11,947 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:14:12,799 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:13,815 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:14,195 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:14,195 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:14,828 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:15,147 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:14:15,147 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:14:15,846 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:16,779 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:16,779 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:16,857 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:17,843 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:14:17,875 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:18,891 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:19,368 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:19,368 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:19,904 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:20,916 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:21,932 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:22,936 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:23,843 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:14:23,955 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:24,559 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:24,559 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:24,956 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:25,522 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:14:25,967 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:26,980 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:27,124 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:27,124 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:27,983 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:28,865 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:14:28,991 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:29,690 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:29,690 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:30,008 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:30,165 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:14:30,165 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:14:31,018 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:32,034 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:32,272 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:32,272 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:33,049 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:34,051 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:34,525 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:14:34,875 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:34,875 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:35,065 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:36,075 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:37,075 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:37,458 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:37,458 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:38,079 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:39,095 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:39,916 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:14:40,027 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:40,027 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:40,106 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:41,122 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:42,135 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:42,597 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:42,597 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:43,139 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:44,140 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:45,144 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:45,159 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:45,159 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:45,191 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:14:45,191 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:14:45,560 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:14:46,155 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:47,156 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:47,731 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:47,731 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:48,160 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:48,352 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:14:49,162 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:50,163 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:50,275 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:50,275 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:50,639 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:14:51,165 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:52,168 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:52,376 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:14:52,822 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:52,823 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:53,170 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:54,183 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:54,389 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:14:55,185 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:55,376 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:55,376 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:55,536 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:14:55,889 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:14:56,200 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:56,404 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:14:57,203 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:57,919 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:57,919 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:14:58,206 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:14:59,210 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:00,193 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:15:00,194 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:15:00,223 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:00,428 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:15:00,891 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:15:01,219 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:02,233 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:02,456 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:15:03,072 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:03,072 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:03,246 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:04,258 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:05,271 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:05,659 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:05,659 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:05,908 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:15:06,269 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:06,492 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:15:07,274 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:08,210 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:08,210 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:08,288 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:08,508 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:15:09,304 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:10,319 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:10,771 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:10,771 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:10,915 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:15:11,321 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:12,336 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:12,538 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:15:13,325 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:13,326 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:13,340 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:14,344 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:14,555 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:15:15,187 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-18 00:15:15,187 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: stop_status
+2025-03-18 00:15:15,359 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:15,874 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:15,874 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:15,922 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:15:16,361 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:17,379 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:17,586 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:15:18,383 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:18,414 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:18,414 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:19,385 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:19,606 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:15:20,391 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:20,937 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:15:20,967 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:20,968 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:21,404 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:21,627 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:15:22,408 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:23,418 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:23,512 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:23,512 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:23,655 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:15:24,421 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:25,425 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:25,552 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:15:25,678 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:15:25,941 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:15:26,065 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:26,065 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:26,442 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:27,440 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:27,707 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:15:28,444 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:28,601 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:28,601 ERROR   gpu       :18148 [interfaces.py:monitor():142] Failed to sample metric: Unknown Error
+2025-03-18 00:15:29,022 DEBUG   SenderThread:18148 [sender.py:send():391] send: exit
+2025-03-18 00:15:29,023 INFO    SenderThread:18148 [sender.py:send_exit():598] handling exit code: 255
+2025-03-18 00:15:29,023 INFO    SenderThread:18148 [sender.py:send_exit():600] handling runtime: 695
+2025-03-18 00:15:29,024 INFO    SenderThread:18148 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2025-03-18 00:15:29,024 INFO    SenderThread:18148 [sender.py:send_exit():606] send defer
+2025-03-18 00:15:29,025 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: defer
+2025-03-18 00:15:29,025 INFO    HandlerThread:18148 [handler.py:handle_request_defer():184] handle defer: 0
+2025-03-18 00:15:29,025 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: defer
+2025-03-18 00:15:29,025 INFO    SenderThread:18148 [sender.py:send_request_defer():622] handle sender defer: 0
+2025-03-18 00:15:29,025 INFO    SenderThread:18148 [sender.py:transition_state():626] send defer: 1
+2025-03-18 00:15:29,025 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: defer
+2025-03-18 00:15:29,025 INFO    HandlerThread:18148 [handler.py:handle_request_defer():184] handle defer: 1
+2025-03-18 00:15:29,025 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: defer
+2025-03-18 00:15:29,025 INFO    SenderThread:18148 [sender.py:send_request_defer():622] handle sender defer: 1
+2025-03-18 00:15:29,025 INFO    SenderThread:18148 [sender.py:transition_state():626] send defer: 2
+2025-03-18 00:15:29,025 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: defer
+2025-03-18 00:15:29,025 INFO    HandlerThread:18148 [handler.py:handle_request_defer():184] handle defer: 2
+2025-03-18 00:15:29,026 INFO    HandlerThread:18148 [system_monitor.py:finish():203] Stopping system monitor
+2025-03-18 00:15:29,026 DEBUG   SystemMonitor:18148 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-03-18 00:15:29,026 INFO    HandlerThread:18148 [interfaces.py:finish():200] Joined cpu monitor
+2025-03-18 00:15:29,026 DEBUG   SystemMonitor:18148 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-03-18 00:15:29,027 INFO    HandlerThread:18148 [interfaces.py:finish():200] Joined disk monitor
+2025-03-18 00:15:29,161 INFO    HandlerThread:18148 [interfaces.py:finish():200] Joined gpu monitor
+2025-03-18 00:15:29,161 INFO    HandlerThread:18148 [interfaces.py:finish():200] Joined memory monitor
+2025-03-18 00:15:29,161 INFO    HandlerThread:18148 [interfaces.py:finish():200] Joined network monitor
+2025-03-18 00:15:29,162 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: defer
+2025-03-18 00:15:29,162 INFO    SenderThread:18148 [sender.py:send_request_defer():622] handle sender defer: 2
+2025-03-18 00:15:29,162 INFO    SenderThread:18148 [sender.py:transition_state():626] send defer: 3
+2025-03-18 00:15:29,163 DEBUG   SenderThread:18148 [sender.py:send():391] send: stats
+2025-03-18 00:15:29,163 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: defer
+2025-03-18 00:15:29,163 INFO    HandlerThread:18148 [handler.py:handle_request_defer():184] handle defer: 3
+2025-03-18 00:15:29,164 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: defer
+2025-03-18 00:15:29,164 INFO    SenderThread:18148 [sender.py:send_request_defer():622] handle sender defer: 3
+2025-03-18 00:15:29,164 INFO    SenderThread:18148 [sender.py:transition_state():626] send defer: 4
+2025-03-18 00:15:29,164 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: defer
+2025-03-18 00:15:29,164 INFO    HandlerThread:18148 [handler.py:handle_request_defer():184] handle defer: 4
+2025-03-18 00:15:29,164 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: defer
+2025-03-18 00:15:29,165 INFO    SenderThread:18148 [sender.py:send_request_defer():622] handle sender defer: 4
+2025-03-18 00:15:29,165 INFO    SenderThread:18148 [sender.py:transition_state():626] send defer: 5
+2025-03-18 00:15:29,165 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: defer
+2025-03-18 00:15:29,165 INFO    HandlerThread:18148 [handler.py:handle_request_defer():184] handle defer: 5
+2025-03-18 00:15:29,166 DEBUG   SenderThread:18148 [sender.py:send():391] send: summary
+2025-03-18 00:15:29,166 INFO    SenderThread:18148 [sender.py:_save_file():1466] saving file wandb-summary.json with policy end
+2025-03-18 00:15:29,166 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: defer
+2025-03-18 00:15:29,166 INFO    SenderThread:18148 [sender.py:send_request_defer():622] handle sender defer: 5
+2025-03-18 00:15:29,166 INFO    SenderThread:18148 [sender.py:transition_state():626] send defer: 6
+2025-03-18 00:15:29,168 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: defer
+2025-03-18 00:15:29,168 INFO    HandlerThread:18148 [handler.py:handle_request_defer():184] handle defer: 6
+2025-03-18 00:15:29,168 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: defer
+2025-03-18 00:15:29,168 INFO    SenderThread:18148 [sender.py:send_request_defer():622] handle sender defer: 6
+2025-03-18 00:15:29,168 INFO    SenderThread:18148 [sender.py:transition_state():626] send defer: 7
+2025-03-18 00:15:29,168 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: status_report
+2025-03-18 00:15:29,168 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: defer
+2025-03-18 00:15:29,169 INFO    HandlerThread:18148 [handler.py:handle_request_defer():184] handle defer: 7
+2025-03-18 00:15:29,169 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: defer
+2025-03-18 00:15:29,169 INFO    SenderThread:18148 [sender.py:send_request_defer():622] handle sender defer: 7
+2025-03-18 00:15:29,714 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:15:29,715 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\wandb-summary.json
+2025-03-18 00:15:30,029 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: poll_exit
+2025-03-18 00:15:31,029 INFO    SenderThread:18148 [sender.py:transition_state():626] send defer: 8
+2025-03-18 00:15:31,029 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: poll_exit
+2025-03-18 00:15:31,029 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: defer
+2025-03-18 00:15:31,029 INFO    HandlerThread:18148 [handler.py:handle_request_defer():184] handle defer: 8
+2025-03-18 00:15:31,030 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: defer
+2025-03-18 00:15:31,030 INFO    SenderThread:18148 [sender.py:send_request_defer():622] handle sender defer: 8
+2025-03-18 00:15:31,030 INFO    SenderThread:18148 [job_builder.py:build():443] Attempting to build job artifact
+2025-03-18 00:15:31,030 INFO    SenderThread:18148 [job_builder.py:_get_source_type():572] is repo sourced job
+2025-03-18 00:15:31,040 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: poll_exit
+2025-03-18 00:15:31,084 INFO    SenderThread:18148 [job_builder.py:build():548] adding wandb-job metadata file
+2025-03-18 00:15:31,102 INFO    SenderThread:18148 [sender.py:transition_state():626] send defer: 9
+2025-03-18 00:15:31,102 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: poll_exit
+2025-03-18 00:15:31,103 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: defer
+2025-03-18 00:15:31,103 INFO    HandlerThread:18148 [handler.py:handle_request_defer():184] handle defer: 9
+2025-03-18 00:15:31,104 DEBUG   SenderThread:18148 [sender.py:send():391] send: artifact
+2025-03-18 00:15:31,746 INFO    Thread-16 :18148 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:15:32,058 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: poll_exit
+2025-03-18 00:15:32,545 INFO    SenderThread:18148 [sender.py:send_artifact():1549] sent artifact job-https___github.com_akarifrites_moodeng_is_cute.git_qat_1.py - {'id': 'QXJ0aWZhY3Q6MTU3NjI0NzQ3MA==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjU3NzUzNDc3NQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTU3NjI0NzQ3MA==', 'versionIndex': 3}}}
+2025-03-18 00:15:32,545 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: defer
+2025-03-18 00:15:32,545 INFO    SenderThread:18148 [sender.py:send_request_defer():622] handle sender defer: 9
+2025-03-18 00:15:32,545 INFO    SenderThread:18148 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-03-18 00:15:32,760 INFO    SenderThread:18148 [dir_watcher.py:finish():388] scan: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files
+2025-03-18 00:15:32,760 INFO    SenderThread:18148 [dir_watcher.py:finish():402] scan save: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\conda-environment.yaml conda-environment.yaml
+2025-03-18 00:15:32,761 INFO    SenderThread:18148 [dir_watcher.py:finish():402] scan save: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\config.yaml config.yaml
+2025-03-18 00:15:32,765 INFO    SenderThread:18148 [dir_watcher.py:finish():402] scan save: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log output.log
+2025-03-18 00:15:32,766 INFO    SenderThread:18148 [dir_watcher.py:finish():402] scan save: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\requirements.txt requirements.txt
+2025-03-18 00:15:32,769 INFO    SenderThread:18148 [dir_watcher.py:finish():402] scan save: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\wandb-metadata.json wandb-metadata.json
+2025-03-18 00:15:32,772 INFO    SenderThread:18148 [dir_watcher.py:finish():402] scan save: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\wandb-summary.json wandb-summary.json
+2025-03-18 00:15:32,775 INFO    SenderThread:18148 [sender.py:transition_state():626] send defer: 10
+2025-03-18 00:15:32,775 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: poll_exit
+2025-03-18 00:15:32,775 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: defer
+2025-03-18 00:15:32,777 INFO    HandlerThread:18148 [handler.py:handle_request_defer():184] handle defer: 10
+2025-03-18 00:15:32,779 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: defer
+2025-03-18 00:15:32,779 INFO    SenderThread:18148 [sender.py:send_request_defer():622] handle sender defer: 10
+2025-03-18 00:15:32,779 INFO    SenderThread:18148 [file_pusher.py:finish():169] shutting down file pusher
+2025-03-18 00:15:33,072 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: poll_exit
+2025-03-18 00:15:33,073 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: poll_exit
+2025-03-18 00:15:33,500 INFO    wandb-upload_0:18148 [upload_job.py:push():130] Uploaded file C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\conda-environment.yaml
+2025-03-18 00:15:33,691 INFO    wandb-upload_2:18148 [upload_job.py:push():130] Uploaded file C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\output.log
+2025-03-18 00:15:33,796 INFO    wandb-upload_1:18148 [upload_job.py:push():130] Uploaded file C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\config.yaml
+2025-03-18 00:15:33,800 INFO    wandb-upload_4:18148 [upload_job.py:push():130] Uploaded file C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\wandb-summary.json
+2025-03-18 00:15:34,081 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: poll_exit
+2025-03-18 00:15:34,082 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: poll_exit
+2025-03-18 00:15:34,586 INFO    wandb-upload_3:18148 [upload_job.py:push():130] Uploaded file C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\files\requirements.txt
+2025-03-18 00:15:34,794 INFO    Thread-15 (_thread_body):18148 [sender.py:transition_state():626] send defer: 11
+2025-03-18 00:15:34,794 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: defer
+2025-03-18 00:15:34,794 INFO    HandlerThread:18148 [handler.py:handle_request_defer():184] handle defer: 11
+2025-03-18 00:15:34,795 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: defer
+2025-03-18 00:15:34,796 INFO    SenderThread:18148 [sender.py:send_request_defer():622] handle sender defer: 11
+2025-03-18 00:15:34,796 INFO    SenderThread:18148 [file_pusher.py:join():175] waiting for file pusher
+2025-03-18 00:15:34,797 INFO    SenderThread:18148 [sender.py:transition_state():626] send defer: 12
+2025-03-18 00:15:34,797 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: defer
+2025-03-18 00:15:34,797 INFO    HandlerThread:18148 [handler.py:handle_request_defer():184] handle defer: 12
+2025-03-18 00:15:34,798 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: defer
+2025-03-18 00:15:34,798 INFO    SenderThread:18148 [sender.py:send_request_defer():622] handle sender defer: 12
+2025-03-18 00:15:34,798 INFO    SenderThread:18148 [file_stream.py:finish():601] file stream finish called
+2025-03-18 00:15:35,089 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: poll_exit
+2025-03-18 00:15:35,690 INFO    SenderThread:18148 [file_stream.py:finish():605] file stream finish is done
+2025-03-18 00:15:35,691 INFO    SenderThread:18148 [sender.py:transition_state():626] send defer: 13
+2025-03-18 00:15:35,691 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: poll_exit
+2025-03-18 00:15:35,691 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: defer
+2025-03-18 00:15:35,691 INFO    HandlerThread:18148 [handler.py:handle_request_defer():184] handle defer: 13
+2025-03-18 00:15:35,692 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: defer
+2025-03-18 00:15:35,692 INFO    SenderThread:18148 [sender.py:send_request_defer():622] handle sender defer: 13
+2025-03-18 00:15:35,692 INFO    SenderThread:18148 [sender.py:transition_state():626] send defer: 14
+2025-03-18 00:15:35,692 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: defer
+2025-03-18 00:15:35,692 INFO    HandlerThread:18148 [handler.py:handle_request_defer():184] handle defer: 14
+2025-03-18 00:15:35,693 DEBUG   SenderThread:18148 [sender.py:send():391] send: final
+2025-03-18 00:15:35,693 DEBUG   SenderThread:18148 [sender.py:send():391] send: footer
+2025-03-18 00:15:35,694 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: defer
+2025-03-18 00:15:35,694 INFO    SenderThread:18148 [sender.py:send_request_defer():622] handle sender defer: 14
+2025-03-18 00:15:35,695 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: poll_exit
+2025-03-18 00:15:35,695 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: server_info
+2025-03-18 00:15:35,696 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: poll_exit
+2025-03-18 00:15:35,696 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: poll_exit
+2025-03-18 00:15:35,696 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: get_summary
+2025-03-18 00:15:35,696 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: server_info
+2025-03-18 00:15:35,697 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: sampled_history
+2025-03-18 00:15:35,698 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-18 00:15:35,963 DEBUG   SenderThread:18148 [sender.py:send_request():418] send_request: poll_exit
+2025-03-18 00:15:35,964 INFO    MainThread:18148 [wandb_run.py:_footer_history_summary_info():4076] rendering history
+2025-03-18 00:15:35,964 INFO    MainThread:18148 [wandb_run.py:_footer_history_summary_info():4108] rendering summary
+2025-03-18 00:15:35,964 INFO    MainThread:18148 [wandb_run.py:_footer_sync_info():4035] logging synced files
+2025-03-18 00:15:35,966 DEBUG   HandlerThread:18148 [handler.py:handle_request():158] handle_request: shutdown
+2025-03-18 00:15:35,966 INFO    HandlerThread:18148 [handler.py:finish():880] shutting down handler
+2025-03-18 00:15:36,705 INFO    WriterThread:18148 [datastore.py:close():296] close: C:\Users\fenel\Documents\dcase2024_task1_baseline\wandb\run-20250318_000351-yfulrgzm\run-yfulrgzm.wandb
+2025-03-18 00:15:36,973 INFO    SenderThread:18148 [sender.py:finish():1631] shutting down sender
+2025-03-18 00:15:36,973 INFO    SenderThread:18148 [file_pusher.py:finish():169] shutting down file pusher
+2025-03-18 00:15:36,973 INFO    SenderThread:18148 [file_pusher.py:join():175] waiting for file pusher

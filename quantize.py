@@ -11,7 +11,7 @@ import wandb
 import librosa
 import os
 
-from models.baseline import get_model, initialize_weights, Block
+from models.baseline_devices import get_model, initialize_weights, Block
 from models.helpers.utils import make_divisible
 from dataset.dcase24 import get_training_set, get_test_set
 
@@ -310,7 +310,7 @@ def fuse_model(model):
     print(model)
     return model
 
-def evaluate(model, dataloader, mel_spec_transform):
+def evaluate(model, dataloader, MelSpecGenerator):
     model.eval()
     correct = 0
     total = 0
@@ -318,7 +318,8 @@ def evaluate(model, dataloader, mel_spec_transform):
         for idx, batch in enumerate(dataloader):
             labels = batch[2]
             raw_waveform = batch[0]
-            mel_spec = mel_spec_transform(raw_waveform)
+            # mel_spec = mel_spec_transform(raw_waveform)
+            mel_spec = MelSpecGenerator(raw_waveform)
             outputs = model(mel_spec)
             _, predicted = torch.max(outputs.data, dim=1)
             correct += (predicted == labels).sum().item()

@@ -17,7 +17,7 @@ import torchaudio.transforms
 import numpy as np
 import librosa
 
-from models.baseline import get_model, initialize_weights, Block
+from models.baseline_devices import get_model, initialize_weights, Block
 from models.helpers.utils import make_divisible
 from dataset.dcase24 import get_training_set, get_test_set
 

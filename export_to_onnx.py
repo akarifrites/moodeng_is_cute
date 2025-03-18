@@ -5,7 +5,7 @@ from torchvision.ops.misc import Conv2dNormActivation
 import onnx
 import onnxruntime as ort
 import os
-from models.baseline import get_model, initialize_weights, Block
+from models.baseline_devices import get_model, initialize_weights, Block
 from models.helpers.utils import make_divisible
 
 class Network(nn.Module):
