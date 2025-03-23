@@ -419,7 +419,7 @@ def main():
     # Prepare model for QAT, inpare the model for static quantization
     model_fp32_prepared = quantization.prepare_qat(model_fp32, inplace=True)
 
-    train_dataset = get_training_set()  # This accesses the original training dataset
+    train_dataset = get_training_set(split=5)  # This accesses the original training dataset
     num_samples = int(0.05 * len(train_dataset))  # 5% of the dataset
     subset_indices = np.random.choice(len(train_dataset), num_samples, replace=False)
     train_subset = Subset(train_dataset, subset_indices)
