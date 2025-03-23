@@ -40,7 +40,7 @@ def get_mel_spectrogram(audio_data, sample_rate=32000):
     return norm_mel_spectrogram
 
 def inference_loop(session, labels, stream):
-    # Buffer to accumulate audio samples
+    
     audio_buffer = np.array([], dtype=np.float32)
 
     while running:
@@ -79,7 +79,6 @@ def inference_loop(session, labels, stream):
                 print(f"{label}: {score:.2f}", end='\t')
             print("")
 
-            # # (Optional) Add logic for threshold-based actions
             # threshold = 0.7
             # for i, label in enumerate(labels):
             #     if probabilities[i] >= threshold:
@@ -107,7 +106,7 @@ def main():
                     channels=CHANNELS,
                     rate=RATE,
                     input=True,
-                    # input_device_index=15,
+                    # input_device_index=27,
                     frames_per_buffer=CHUNK,
                     stream_callback=audio_callback)
     
