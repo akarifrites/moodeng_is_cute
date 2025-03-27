@@ -155,6 +155,7 @@ class Network(nn.Module):
             nn.Linear(128, n_classes)
         )
 
+        # TO save parameters, a linear layer can be replaced by a Conv1D layer (see gpt)
 
         # ff_list = []
         # ff_list += [nn.Conv2d(

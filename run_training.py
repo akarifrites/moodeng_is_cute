@@ -85,7 +85,7 @@ class PLModule(pl.LightningModule):
         if self.training:
             x = self.mel_augment(x)
         x = (x + 1e-5).log()
-        print("After log mel, input shape is:", x.shape)  # Debug print
+        # print("After log mel, input shape is:", x.shape)  # Debug print
         return x
 
     def forward(self, x):
@@ -127,9 +127,9 @@ class PLModule(pl.LightningModule):
         x, files, labels, devices, cities = train_batch
         labels = labels.type(torch.LongTensor)
         labels = labels.to(self.device)
-        print("Raw batch shape:", x.shape)
+        # print("Raw batch shape:", x.shape)
         x = self.mel_forward(x)  # we convert the raw audio signals into log mel spectrograms
-        print("Training step input shape:", x.shape)
+        # print("Training step input shape:", x.shape)
         if self.config.mixstyle_p > 0:
             # frequency mixstyle
             x = mixstyle(x, self.config.mixstyle_p, self.config.mixstyle_alpha)

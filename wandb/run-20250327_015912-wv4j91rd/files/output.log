@@ -1,0 +1,83 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 3060 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Loading `train_dataloader` to estimate number of stepping batches.
+C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:424: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=15` in the `DataLoader` to improve performance.
+C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\pytorch_lightning\loops\fit_loop.py:298: The number of training batches (28) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+  | Name        | Type             | Params | Mode
+---------------------------------------------------------
+0 | mel         | Sequential       | 0      | train
+1 | mel_augment | Sequential       | 0      | train
+2 | model       | MobileNetV3Audio | 1.2 M  | train
+---------------------------------------------------------
+1.2 M     Trainable params
+0         Non-trainable params
+1.2 M     Total params
+4.909     Total estimated model params size (MB)
+218       Modules in train mode
+0         Modules in eval mode
+C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:424: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=15` in the `DataLoader` to improve performance.
+Sanity Checking DataLoader 0:   0%|                                                                                                                                                | 0/2 [00:00<?, ?it/s]After log mel, input shape is: torch.Size([256, 1, 256, 65])
+
+Sanity Checking DataLoader 0:  50%|████████████████████████████████████████████████████████████████████                                                                    | 1/2 [00:01<00:01,  0.69it/s]After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Epoch 0:   0%|                                                                                                                                                                    | 0/28 [00:00<?, ?it/s]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:   4%|█████▏                                                                                                                                          | 1/28 [00:03<01:41,  0.27it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:   7%|██████████▎                                                                                                                                     | 2/28 [00:06<01:21,  0.32it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  11%|███████████████▍                                                                                                                                | 3/28 [00:08<01:13,  0.34it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  14%|████████████████████▌                                                                                                                           | 4/28 [00:11<01:09,  0.35it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  18%|█████████████████████████▋                                                                                                                      | 5/28 [00:13<01:03,  0.36it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  21%|██████████████████████████████▊                                                                                                                 | 6/28 [00:16<00:59,  0.37it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  25%|████████████████████████████████████                                                                                                            | 7/28 [00:18<00:56,  0.37it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  29%|█████████████████████████████████████████▏                                                                                                      | 8/28 [00:21<00:54,  0.37it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  32%|██████████████████████████████████████████████▎                                                                                                 | 9/28 [00:24<00:51,  0.37it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  36%|███████████████████████████████████████████████████                                                                                            | 10/28 [00:27<00:49,  0.36it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  39%|████████████████████████████████████████████████████████▏                                                                                      | 11/28 [00:30<00:47,  0.36it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  43%|█████████████████████████████████████████████████████████████▎                                                                                 | 12/28 [00:33<00:44,  0.36it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  46%|██████████████████████████████████████████████████████████████████▍                                                                            | 13/28 [00:36<00:41,  0.36it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  50%|███████████████████████████████████████████████████████████████████████▌                                                                       | 14/28 [00:39<00:39,  0.36it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  54%|████████████████████████████████████████████████████████████████████████████▌                                                                  | 15/28 [00:42<00:36,  0.36it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  57%|█████████████████████████████████████████████████████████████████████████████████▋                                                             | 16/28 [00:44<00:33,  0.36it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  61%|██████████████████████████████████████████████████████████████████████████████████████▊                                                        | 17/28 [00:47<00:30,  0.36it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  64%|███████████████████████████████████████████████████████████████████████████████████████████▉                                                   | 18/28 [00:50<00:28,  0.36it/s, v_num=91rd]Raw batch shape: torch.Size([256, 1, 44100])
+After log mel, input shape is: torch.Size([256, 1, 256, 65])
+Training step input shape: torch.Size([256, 1, 256, 65])
+Epoch 0:  68%|█████████████████████████████████████████████████████████████████████████████████████████████████                                              | 19/28 [00:53<00:25,  0.36it/s, v_num=91rd]
+Detected KeyboardInterrupt, attempting graceful shutdown ...

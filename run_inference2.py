@@ -9,7 +9,7 @@ import librosa
 CHUNK = 1024               # Number of audio samples per frame
 FORMAT = pyaudio.paFloat32 # Audio format
 CHANNELS = 1               # Mono audio
-RATE = 32000               # Sample rate in Hz (adjust based on your model)
+RATE = 44100               # Sample rate in Hz (adjust based on your model)
 BUFFER_DURATION = 1        # Seconds of audio to accumulate before inference
 SAMPLES_REQUIRED = RATE * BUFFER_DURATION
 
@@ -24,7 +24,7 @@ def audio_callback(in_data, frame_count, time_info, status):
     audio_queue.put(audio_data)
     return (None, pyaudio.paContinue)
 
-def get_mel_spectrogram(audio_data, sample_rate=32000):
+def get_mel_spectrogram(audio_data, sample_rate=RATE):
     # Compute the mel spectrogram
     mel_spectrogram = librosa.feature.melspectrogram(
         y=audio_data, sr=sample_rate, n_mels=256, fmax=8000, n_fft=2048, hop_length=512
@@ -71,13 +71,20 @@ def inference_loop(session, labels, stream):
             result = session.run(None, {input_name: input_tensor})
 
             # Assuming the model outputs logits or probabilities for each class
-            probabilities = np.squeeze(result[0])  # Shape: [10]
+            logits = np.squeeze(result[0])  # Shape: [10]
+            probabilities = np.exp(logits) / np.sum(np.exp(logits))
 
             print("Classification results:")
+            max_label = None
+            max_score = -float('inf')
             for i, label in enumerate(labels):
-                score = probabilities[i]
-                print(f"{label}: {score:.2f}", end='\t')
+                    score = probabilities[i]
+                    print(f"{label}: {score:.2f}", end='\t')
+                    if score > max_score:  # Check if this score is the highest so far
+                        max_score = score
+                        max_label = label
             print("")
+            print(f"classified as: {max_label} with score {max_score:.2f}")
 
             # threshold = 0.7
             # for i, label in enumerate(labels):

@@ -19,7 +19,7 @@ from helpers.output_dim import get_model_output_dim
 from models.baseline_devices import get_model
 from models.testmodel_1 import testmodel_1
 from helpers.utils import mixstyle
-from helpers import nessi
+from helpers import nessi_devices as nessi
 
 
 class PLModule(pl.LightningModule):
@@ -67,7 +67,7 @@ class PLModule(pl.LightningModule):
                                expansion_rate=config.expansion_rate
                                )
 
-        self.model = testmodel_1(num_classes=config.n_classes, device_embedding_dim=4)
+        # self.model = testmodel_1(num_classes=config.n_classes, device_embedding_dim=4)
         
         self.device_ids = ['a', 'b', 'c', 's1', 's2', 's3', 's4', 's5', 's6']
         self.label_ids = ['airport', 'bus', 'metro', 'metro_station', 'park', 'public_square', 'shopping_mall',
