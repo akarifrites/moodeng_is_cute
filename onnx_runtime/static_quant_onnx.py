@@ -33,7 +33,6 @@ class MelSpec(nn.Module):
         x = (x + 1e-5).log()
         return x
 
-# Implement a simple calibration data reader
 class CalibrationData(CalibrationDataReader):
     def __init__(self, calibration_loader, MelSpecGenerator):
         self.loader_iter = iter(calibration_loader)
@@ -71,6 +70,8 @@ model_fp32_optimized = r'c:\Users\fenel\Documents\dcase2024_task1_baseline\onnx_
 
 model_quantized = r'c:\Users\fenel\Documents\dcase2024_task1_baseline\onnx_runtime\baseline_static.onnx'
 
+
+
 # Run preprocessing optimization
 quant_pre_process(model_fp32, model_fp32_optimized)
 
@@ -82,4 +83,7 @@ quantize_static(model_input=model_fp32_optimized,
                 quant_format='QDQ', 
                 per_channel=True, 
                 activation_type=QuantType.QUInt8,
-                weight_type=QuantType.QInt8)
+                weight_type=QuantType.QInt8,
+                optimize_model=False,  # Important for older runtime support
+                use_external_data_format=False
+                )

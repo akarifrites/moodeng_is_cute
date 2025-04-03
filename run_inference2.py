@@ -39,9 +39,17 @@ def get_mel_spectrogram(audio_data, sample_rate=RATE):
     norm_mel_spectrogram = librosa.util.fix_length(norm_mel_spectrogram, size=65, axis=1)
     return norm_mel_spectrogram
 
+def is_audio_signal_present(audio_data, threshold=0.01):
+    """
+    Compute the RMS energy of the audio and compare it to a threshold.
+    Adjust the threshold based on your environment.
+    """
+    rms = np.sqrt(np.mean(audio_data**2))
+    return rms > threshold
+
 def inference_loop(session, labels, stream):
-    
     audio_buffer = np.array([], dtype=np.float32)
+    listening = False  # Flag to indicate if significant audio is present
 
     while running:
         try:
@@ -62,6 +70,12 @@ def inference_loop(session, labels, stream):
         if len(audio_buffer) >= SAMPLES_REQUIRED:
             input_data = audio_buffer[:SAMPLES_REQUIRED] # Extract a segment of the required length
             audio_buffer = audio_buffer[SAMPLES_REQUIRED:] # Remove the used samples from the buffer (for overlapping, change this logic)
+
+            # Set the listening flag based on the RMS energy of the input
+            listening = is_audio_signal_present(input_data, threshold=0.01)
+            if not listening:
+                print("Background noise detected. Skipping classification.")
+                continue  # Skip classification if the audio signal is too weak
 
             mel_spec = get_mel_spectrogram(input_data, sample_rate=RATE)
             input_tensor = mel_spec[np.newaxis, np.newaxis, :, :] # Shape: [1, 1, 256, 65]
@@ -98,13 +112,12 @@ def inference_loop(session, labels, stream):
 
 def main():
     global running
-    labels = [
-        "airport", "shopping_mall", "metro_station", "street_pedestrian", 
-        "public_square", "street_traffic", "tram", "bus", "metro", "park"
+    labels = ["airport", "shopping_mall", "metro_station", "street_pedestrian", 
+              "public_square", "street_traffic", "tram", "bus", "metro", "park"
     ]
 
-    # Load the ONNX model (make sure "model.onnx" is in your working directory or provide the correct path)
-    session = onnxruntime.InferenceSession("baseline.onnx")
+    model_path = r"C:\Users\fenel\Documents\dcase2024_task1_baseline\onnx_runtime\baseline.onnx"
+    session = onnxruntime.InferenceSession(model_path)
     print("Model Loaded Successfully")
     
     # Initialize PyAudio and open the stream

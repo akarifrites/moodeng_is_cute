@@ -162,22 +162,18 @@ model = get_model(n_classes=10, in_channels=1, base_channels=32, channels_multip
 model_state_dict = torch.load(r'.\predictions\0vl52i7d\model_state_dict.pt', map_location=torch.device("cpu"))
 model.load_state_dict(model_state_dict)
 
-# # **Disable quantization before exporting**
-# model.quant = torch.nn.Identity()  # Remove QuantStub
-# model.dequant = torch.nn.Identity()  # Remove DeQuantStub
-
-# Set to evaluation mode
+# Set to evaluation model
 model.eval()
 
 input_tensor = torch.rand((1, 1, 256, 65), dtype=torch.float32)
 
 torch.onnx.export(
     model,                  # model to export
-    input_tensor,        # inputs of the model,
+    input_tensor,           # inputs of the model,
     "baseline.onnx",        # filename of the ONNX model
     input_names=["input"],  # Rename inputs for the ONNX model
     output_names=["output"],# Rename outputs for the ONNX model
-    opset_version=13,  # Ensure compatibility
+    opset_version=13,       # Ensure compatibility
     dynamic_axes={"input": {0: "batch_size"}, "output": {0: "batch_size"}}
 )
 
@@ -186,9 +182,7 @@ if not os.path.exists(onnx_filename):
     print(f"Error: {onnx_filename} was not created. Check ONNX export!")
 else:
     print(f"ONNX file successfully created: {onnx_filename}")
-# print(f"Model exported successfully to {onnx_filename}")
 
-# 4. Verify the ONNX Model
 onnx_model = onnx.load(onnx_filename)
 onnx.checker.check_model(onnx_model)
 print("ONNX model is valid!")
