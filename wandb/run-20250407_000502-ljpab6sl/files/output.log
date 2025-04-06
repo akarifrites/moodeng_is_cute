@@ -1,0 +1,198 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA GeForce RTX 3060 Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Loading `train_dataloader` to estimate number of stepping batches.
+C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:424: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=15` in the `DataLoader` to improve performance.
+C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\pytorch_lightning\loops\fit_loop.py:298: The number of training batches (28) is smaller than the logging interval Trainer(log_every_n_steps=50). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+  | Name  | Type       | Params | Mode
+---------------------------------------------
+0 | mel   | Sequential | 0      | train
+1 | model | Network    | 61.8 K | train
+---------------------------------------------
+61.8 K    Trainable params
+0         Non-trainable params
+61.8 K    Total params
+0.247     Total estimated model params size (MB)
+126       Modules in train mode
+0         Modules in eval mode
+C:\Users\fenel\anaconda3\envs\d24_t1\lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:424: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=15` in the `DataLoader` to improve performance.
+Epoch 0: 100%|████████████████████████████████████████████████████████████████████████████████████| 28/28 [00:04<00:00,  6.01it/s, v_num=b6sl, avg_loss=2.360, dev_loss=0.116, train/loss=2.470]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Validation DataLoader 0:  99%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉ | 115/116 [02:39<00:01,  0.72it/s]
+Epoch 0, global step 28: 'val/acc' reached 0.10010 (best 0.10010), saving model to '.\\DCASE24_Task1\\ljpab6sl\\checkpoints\\epoch=0-val/acc=0.100.ckpt' as top 1
+`Trainer.fit` stopped: `max_epochs=1` reached.
+Restoring states from the checkpoint path at .\DCASE24_Task1\ljpab6sl\checkpoints\epoch=0-val/acc=0.100.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Loaded model weights from the checkpoint at .\DCASE24_Task1\ljpab6sl\checkpoints\epoch=0-val/acc=0.100.ckpt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Testing DataLoader 0: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 116/116 [00:46<00:00,  2.48it/s]Test epoch ended; computing metrics...
+FINAL MACRO AVG ACC : 0.10003367811441422
+FINAL DEVICE WEIGHTS:  tensor([-2.4270,  0.1673,  0.1673,  0.1673,  0.1673,  0.1673,  0.0000,  0.0000,
+         0.0000], device='cuda:0')
+Testing DataLoader 0: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 116/116 [00:46<00:00,  2.47it/s]
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃[1m         Test metric         [22m┃[1m        DataLoader 0         [22m┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│[36m          test/acc           [39m│[35m     0.10010107606649399     [39m│
+│[36m         test/acc.a          [39m│[35m     0.10000000149011612     [39m│
+│[36m      test/acc.airport       [39m│[35m             0.0             [39m│
+│[36m         test/acc.b          [39m│[35m     0.10030394792556763     [39m│
+│[36m        test/acc.bus         [39m│[35m             0.0             [39m│
+│[36m         test/acc.c          [39m│[35m     0.10030394792556763     [39m│
+│[36m       test/acc.metro        [39m│[35m    0.001010101055726409     [39m│
+│[36m   test/acc.metro_station    [39m│[35m     0.6659932732582092      [39m│
+│[36m        test/acc.park        [39m│[35m             0.0             [39m│
+│[36m   test/acc.public_square    [39m│[35m     0.2222222238779068      [39m│
+│[36m        test/acc.real        [39m│[35m     0.10020242631435394     [39m│
+│[36m         test/acc.s1         [39m│[35m     0.10000000149011612     [39m│
+│[36m         test/acc.s2         [39m│[35m     0.10000000149011612     [39m│
+│[36m         test/acc.s3         [39m│[35m     0.1003030315041542      [39m│
+│[36m         test/acc.s4         [39m│[35m     0.10000000149011612     [39m│
+│[36m         test/acc.s5         [39m│[35m     0.10000000149011612     [39m│
+│[36m         test/acc.s6         [39m│[35m     0.10000000149011612     [39m│
+│[36m        test/acc.seen        [39m│[35m     0.10010100901126862     [39m│
+│[36m   test/acc.shopping_mall    [39m│[35m     0.1111111119389534      [39m│
+│[36m test/acc.street_pedestrian  [39m│[35m             0.0             [39m│
+│[36m   test/acc.street_traffic   [39m│[35m             0.0             [39m│
+│[36m        test/acc.tram        [39m│[35m             0.0             [39m│
+│[36m       test/acc.unseen       [39m│[35m     0.10000000149011612     [39m│
+│[36m         test/cnt.a          [39m│[35m           3300.0            [39m│
+│[36m      test/cnt.airport       [39m│[35m           2960.0            [39m│
+│[36m         test/cnt.b          [39m│[35m           3290.0            [39m│
+│[36m        test/cnt.bus         [39m│[35m           2970.0            [39m│
+│[36m         test/cnt.c          [39m│[35m           3290.0            [39m│
+│[36m       test/cnt.metro        [39m│[35m           2970.0            [39m│
+│[36m   test/cnt.metro_station    [39m│[35m           2970.0            [39m│
+│[36m        test/cnt.park        [39m│[35m           2970.0            [39m│
+│[36m   test/cnt.public_square    [39m│[35m           2970.0            [39m│
+│[36m         test/cnt.s1         [39m│[35m           3300.0            [39m│
+│[36m         test/cnt.s2         [39m│[35m           3300.0            [39m│
+│[36m         test/cnt.s3         [39m│[35m           3300.0            [39m│
+│[36m         test/cnt.s4         [39m│[35m           3300.0            [39m│
+│[36m         test/cnt.s5         [39m│[35m           3300.0            [39m│
+│[36m         test/cnt.s6         [39m│[35m           3300.0            [39m│
+│[36m   test/cnt.shopping_mall    [39m│[35m           2970.0            [39m│
+│[36m test/cnt.street_pedestrian  [39m│[35m           2970.0            [39m│
+│[36m   test/cnt.street_traffic   [39m│[35m           2970.0            [39m│
+│[36m        test/cnt.tram        [39m│[35m           2960.0            [39m│
+│[36m       test/count.real       [39m│[35m           9880.0            [39m│
+│[36m       test/count.seen       [39m│[35m           9900.0            [39m│
+│[36m      test/count.unseen      [39m│[35m           9900.0            [39m│
+│[36m       test/lloss.real       [39m│[35m      2.548759698867798      [39m│
+│[36m       test/lloss.seen       [39m│[35m      2.770345687866211      [39m│
+│[36m      test/lloss.unseen      [39m│[35m     2.4929521083831787      [39m│
+│[36m          test/loss          [39m│[35m         2.60546875          [39m│
+│[36m         test/loss.a         [39m│[35m     2.4378678798675537      [39m│
+│[36m      test/loss.airport      [39m│[35m     3.5444257259368896      [39m│
+│[36m         test/loss.b         [39m│[35m     2.4435341358184814      [39m│
+│[36m        test/loss.bus        [39m│[35m      2.414489984512329      [39m│
+│[36m         test/loss.c         [39m│[35m      2.765213966369629      [39m│
+│[36m       test/loss.metro       [39m│[35m      2.729266405105591      [39m│
+│[36m   test/loss.metro_station   [39m│[35m     1.3903775215148926      [39m│
+│[36m       test/loss.park        [39m│[35m     2.2818241119384766      [39m│
+│[36m   test/loss.public_square   [39m│[35m      2.365950584411621      [39m│
+│[36m        test/loss.s1         [39m│[35m      2.617579936981201      [39m│
+│[36m        test/loss.s2         [39m│[35m      2.982748031616211      [39m│
+│[36m        test/loss.s3         [39m│[35m     2.7107088565826416      [39m│
+│[36m        test/loss.s4         [39m│[35m      2.493198871612549      [39m│
+│[36m        test/loss.s5         [39m│[35m     2.4925851821899414      [39m│
+│[36m        test/loss.s6         [39m│[35m      2.493072509765625      [39m│
+│[36m   test/loss.shopping_mall   [39m│[35m     2.1479310989379883      [39m│
+│[36m test/loss.street_pedestrian [39m│[35m     2.8260931968688965      [39m│
+│[36m  test/loss.street_traffic   [39m│[35m     2.7883148193359375      [39m│
+│[36m       test/loss.tram        [39m│[35m      3.558269739151001      [39m│
+│[36m     test/macro_avg_acc      [39m│[35m     0.10003367811441422     [39m│
+└─────────────────────────────┴─────────────────────────────┘

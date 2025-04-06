@@ -49,7 +49,12 @@ def is_audio_signal_present(audio_data, threshold=0.01):
 
 def inference_loop(session, labels, stream):
     audio_buffer = np.array([], dtype=np.float32)
-    listening = False  # Flag to indicate if significant audio is present
+    # listening = False  # Flag to indicate if significant audio is present
+
+    # New thresholds: adjust these values as needed.
+    rms_threshold = 0.01               # Only process audio if RMS energy is above this value
+    classification_threshold = 0.7     # Only accept classification if confidence exceeds this value
+
 
     while running:
         try:
@@ -72,7 +77,7 @@ def inference_loop(session, labels, stream):
             audio_buffer = audio_buffer[SAMPLES_REQUIRED:] # Remove the used samples from the buffer (for overlapping, change this logic)
 
             # Set the listening flag based on the RMS energy of the input
-            listening = is_audio_signal_present(input_data, threshold=0.01)
+            listening = is_audio_signal_present(input_data, threshold=rms_threshold)
             if not listening:
                 print("Background noise detected. Skipping classification.")
                 continue  # Skip classification if the audio signal is too weak
@@ -87,26 +92,33 @@ def inference_loop(session, labels, stream):
             # Assuming the model outputs logits or probabilities for each class
             logits = np.squeeze(result[0])  # Shape: [10]
             probabilities = np.exp(logits) / np.sum(np.exp(logits))
+            max_score = np.max(probabilities)
+            max_index = np.argmax(probabilities)
+            max_label = labels[max_index]
 
+            # Only accept classification if confidence is high enough
+            if max_score < classification_threshold:
+                print("Low classification confidence. Likely background noise or ambiguous input.")
+                continue
+
+            # max_score = -float('inf')
+            # max_label = None
             print("Classification results:")
-            max_label = None
-            max_score = -float('inf')
             for i, label in enumerate(labels):
-                    score = probabilities[i]
-                    print(f"{label}: {score:.2f}", end='\t')
-                    if score > max_score:  # Check if this score is the highest so far
-                        max_score = score
-                        max_label = label
+                print(f"{label}: {probabilities[i]:.2f}", end='\t')
+                    # score = probabilities[i]
+                    # print(f"{label}: {score:.2f}", end='\t')
+                    # if score > max_score:  # Check if this score is the highest so far
+                    #     max_score = score
+                    #     max_label = label
             print("")
             print(f"classified as: {max_label} with score {max_score:.2f}")
+            print("Inference result:", result)
 
             # threshold = 0.7
             # for i, label in enumerate(labels):
             #     if probabilities[i] >= threshold:
             #         print(f"Action for {label} detected with probability {probabilities[i]:.2f}")
-            
-            # Process or print the inference result
-            print("Inference result:", result)
             
         time.sleep(0.01)
 
